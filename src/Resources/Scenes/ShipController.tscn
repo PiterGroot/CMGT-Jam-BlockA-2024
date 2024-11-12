@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://1kyemv7gh3w0"]
+[gd_scene load_steps=6 format=3 uid="uid://1kyemv7gh3w0"]
 
-[ext_resource type="Script" path="res://src/SpaceShip/SpaceshipController.cs" id="1_smvlt"]
+[ext_resource type="PackedScene" uid="uid://bcchkqf1qrvs1" path="res://src/Resources/Scenes/space_ship_controller.tscn" id="1_hhw7m"]
 [ext_resource type="Material" uid="uid://cas7k84jpi47b" path="res://src/Resources/Materials/TestMat.tres" id="2_3cgj2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s7qxk"]
@@ -16,8 +16,6 @@ sky = SubResource("Sky_uab6t")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_4snno"]
-
 [node name="ShipController" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -27,24 +25,9 @@ environment = SubResource("Environment_qsjw4")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.97987)
-
-[node name="CharacterBody3D" type="CharacterBody3D" parent="Node3D"]
-script = ExtResource("1_smvlt")
-Speed = 50.0
-Acceleration = 10.0
-MaxSpeed = 100.0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CharacterBody3D"]
-shape = SubResource("BoxShape3D_4snno")
-
-[node name="SpaceShip" type="CSGBox3D" parent="Node3D/CharacterBody3D"]
-
-[node name="Camera3D" type="Camera3D" parent="Node3D/CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.946734, 0.322018, 0, -0.322018, 0.946734, 0, 2.02264, 3.22764)
+[node name="SpaceShipController" parent="." instance=ExtResource("1_hhw7m")]
 
 [node name="FLOOR" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97241, -9.81711, -29.964)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.0877, -9.81711, -29.964)
 material_override = ExtResource("2_3cgj2")
-size = Vector3(17.2358, 2, 167.592)
+size = Vector3(254.647, 2, 167.592)

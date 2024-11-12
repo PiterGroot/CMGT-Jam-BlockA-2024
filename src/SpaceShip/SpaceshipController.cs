@@ -6,9 +6,11 @@ public partial class SpaceshipController : CharacterBody3D
 	[Export] public float RotationSpeed = 2f;
 	[Export] public float Acceleration = 1f;
 	[Export] public float MaxSpeed = 50f;
+	[Export] public float RotationSmoothing = 5f;
 
 	private float _currentSpeed = 0f;
 	private Vector3 _velocity = Vector3.Zero;
+	private Vector3 _rotationVelocity = Vector3.Zero;
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -35,7 +37,7 @@ public partial class SpaceshipController : CharacterBody3D
 	private void HandleRotation(double delta)
 	{
 		Vector3 rotationInput = Vector3.Zero;
-		
+
 		if (Input.IsActionPressed("pitch_up"))
 			rotationInput.X += 1;
 		if (Input.IsActionPressed("pitch_down"))
@@ -51,10 +53,10 @@ public partial class SpaceshipController : CharacterBody3D
 		if (Input.IsActionPressed("roll_right"))
 			rotationInput.Z -= 1;
 
-		Vector3 rotation = rotationInput * RotationSpeed * (float)delta;
+		_rotationVelocity = _rotationVelocity.Lerp(rotationInput * RotationSpeed, RotationSmoothing * (float)delta);
 
-		RotateObjectLocal(Vector3.Right, rotation.X);   
-		RotateObjectLocal(Vector3.Up, rotation.Y);     
-		RotateObjectLocal(Vector3.Forward, rotation.Z); 
+		RotateObjectLocal(Vector3.Right, _rotationVelocity.X * (float)delta);
+		RotateObjectLocal(Vector3.Up, _rotationVelocity.Y * (float)delta);
+		RotateObjectLocal(Vector3.Forward, _rotationVelocity.Z * (float)delta);
 	}
 }
