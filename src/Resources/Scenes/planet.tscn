@@ -1,13 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://bi4lkbcqqe1hr"]
+[gd_scene load_steps=3 format=3 uid="uid://bi4lkbcqqe1hr"]
 
 [ext_resource type="Script" path="res://src/Resources/Scenes/PlanetData.cs" id="1_tvv7u"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_r4uur"]
 
 [node name="Planet" type="Node3D"]
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+use_collision = true
 radius = 9.071
 radial_segments = 19
 rings = 29
 script = ExtResource("1_tvv7u")
-GravityStrength = 200.0
+GravityStrength = 150.0
 GravityRadius = 500.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGSphere3D"]
+shape = SubResource("SphereShape3D_r4uur")

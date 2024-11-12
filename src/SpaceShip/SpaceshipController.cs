@@ -8,6 +8,7 @@ public partial class SpaceshipController : CharacterBody3D
 	[Export] public float Acceleration = 1f;
 	[Export] public float MaxSpeed = 50f;
 	[Export] public float RotationSmoothing = 5f;
+	[Export] public float CollisionRadius = 10f;
 
 	private float _currentSpeed = 0f;
 	private Vector3 _velocity = Vector3.Zero;
@@ -26,6 +27,7 @@ public partial class SpaceshipController : CharacterBody3D
 		
 		Velocity = _velocity;
 		MoveAndSlide();
+		DetectPlanetCollision();
 	}
 
 	private void HandleMovement(double delta)
@@ -85,6 +87,25 @@ public partial class SpaceshipController : CharacterBody3D
 				}
 			}
 		}
+	}
+	
+	private void DetectPlanetCollision()
+	{
+		if (_nearestPlanet != null)
+		{
+			// Get the distance to the planet
+			float distanceToPlanet = GlobalPosition.DistanceTo(_nearestPlanet.GlobalPosition);
+
+			if (distanceToPlanet <= CollisionRadius)
+			{
+				OnCollisionWithPlanet();
+			}
+		}
+	}
+	
+	public void OnCollisionWithPlanet()
+	{
+		GD.Print("Player has collided with the planet! Triggering death screen...");
 	}
 
 	private void ApplyGravity(double delta)
