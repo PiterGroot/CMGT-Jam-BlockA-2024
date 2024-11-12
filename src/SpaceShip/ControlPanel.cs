@@ -16,7 +16,6 @@ public partial class ControlPanel : Node3D
 
 	private void OnPitchUp(object eventData)
 	{
-		GD.Print(leftLever.Rotation.X);
 		leftLever.RotateX((float)(1 * GetProcessDeltaTime()));
 		leftLever.Rotation = new Vector3(Mathf.Clamp(leftLever.Rotation.X, 0, 3), leftLever.Rotation.Y, leftLever.Rotation.Z);
 	}

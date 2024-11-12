@@ -37,7 +37,7 @@ public partial class SpaceshipController : CharacterBody3D
 		}
 
 		else
-			_currentSpeed = Mathf.Lerp(_currentSpeed, 0, (float)(delta * 2));
+			_currentSpeed = Mathf.Lerp(_currentSpeed, 0, (float)(delta * .1f));
 
 		_currentSpeed = Mathf.Clamp(_currentSpeed, -MaxSpeed, MaxSpeed);
 	}
