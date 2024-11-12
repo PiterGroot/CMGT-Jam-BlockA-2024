@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bcchkqf1qrvs1"]
 
 [ext_resource type="Script" path="res://src/SpaceShip/SpaceshipController.cs" id="1_75e5r"]
-[ext_resource type="ArrayMesh" uid="uid://d17xbuxg1uebs" path="res://src/Resources/Models/ControlPanel/model.obj" id="2_p76ag"]
+[ext_resource type="PackedScene" uid="uid://ijrtglbtofxe" path="res://src/SpaceShip/ControlPanel.tscn" id="2_feqm6"]
 [ext_resource type="PackedScene" uid="uid://db2sh2ejarskd" path="res://src/Resources/Models/ControlPanel/SingleMonitor.glb" id="3_0xait"]
 [ext_resource type="Material" uid="uid://dsygek4t8pk8r" path="res://src/Resources/Materials/SpaceshipWindow.tres" id="4_rhc60"]
 
@@ -26,10 +26,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, -0.217)
 
 [node name="Node3D" type="Node3D" parent="CharacterBody3D"]
 
-[node name="Panel" type="MeshInstance3D" parent="CharacterBody3D/Node3D"]
-transform = Transform3D(3, 0, 0, 0, 2.75534, -1.18664, 0, 1.18664, 2.75534, 0, -0.375, -1.156)
-mesh = ExtResource("2_p76ag")
-skeleton = NodePath("../../..")
+[node name="ControlPanel" parent="CharacterBody3D/Node3D" instance=ExtResource("2_feqm6")]
+transform = Transform3D(-3.375, 7.24072e-08, -3.72694e-07, -2.01232e-07, 2.46824, 2.30183, 3.21945e-07, 2.30183, -2.46824, 0.0667839, -0.410311, -1.49269)
 
 [node name="SingleMonitor" parent="CharacterBody3D/Node3D" instance=ExtResource("3_0xait")]
 transform = Transform3D(0.020221, 0.00494622, -0.00711667, 0, 0.0180653, 0.0125557, 0.00866672, -0.0115404, 0.0166044, 0.527674, -0.63334, -1.11915)
