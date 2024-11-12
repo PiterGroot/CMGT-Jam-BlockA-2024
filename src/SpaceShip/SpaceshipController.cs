@@ -8,6 +8,8 @@ public partial class SpaceshipController : CharacterBody3D
 	[Export] public float MaxSpeed = 50f;
 	[Export] public float RotationSmoothing = 5f;
 
+	[Export] private SpaceShipFuel SpaceShipFuel;
+
 	private float _currentSpeed = 0f;
 	private Vector3 _velocity = Vector3.Zero;
 	private Vector3 _rotationVelocity = Vector3.Zero;
@@ -19,6 +21,8 @@ public partial class SpaceshipController : CharacterBody3D
 
 		_velocity = -Transform.Basis.Z * _currentSpeed;
 		Velocity = _velocity;
+
+		if (Velocity.Length() > 0) SpaceShipFuel.OnMove();
 		MoveAndSlide();
 	}
 
