@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://1kyemv7gh3w0"]
+
+[ext_resource type="PackedScene" uid="uid://bcchkqf1qrvs1" path="res://src/Resources/Scenes/space_ship_controller.tscn" id="1_hhw7m"]
+[ext_resource type="Material" uid="uid://cas7k84jpi47b" path="res://src/Resources/Materials/TestMat.tres" id="2_3cgj2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s7qxk"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_uab6t"]
+sky_material = SubResource("ProceduralSkyMaterial_s7qxk")
+
+[sub_resource type="Environment" id="Environment_qsjw4"]
+background_mode = 2
+sky = SubResource("Sky_uab6t")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="ShipController" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qsjw4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="SpaceShipController" parent="." instance=ExtResource("1_hhw7m")]
+
+[node name="FLOOR" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.0877, -9.81711, -29.964)
+material_override = ExtResource("2_3cgj2")
+size = Vector3(254.647, 2, 167.592)
