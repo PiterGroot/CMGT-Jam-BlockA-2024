@@ -26,7 +26,6 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="SpaceShipController" parent="." instance=ExtResource("1_hhw7m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.450763, -3.97987)
 
 [node name="FLOOR" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.0877, -9.81711, -29.964)

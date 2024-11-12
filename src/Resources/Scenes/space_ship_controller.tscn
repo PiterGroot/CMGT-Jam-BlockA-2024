@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcchkqf1qrvs1"]
+[gd_scene load_steps=7 format=3 uid="uid://bcchkqf1qrvs1"]
 
 [ext_resource type="Script" path="res://src/SpaceShip/SpaceshipController.cs" id="1_75e5r"]
-[ext_resource type="PackedScene" uid="uid://ijrtglbtofxe" path="res://src/Resources/Scenes/ControlPanelAnimation.tscn" id="2_feqm6"]
+[ext_resource type="PackedScene" path="res://src/Resources/Scenes/ControlPanelAnimation.tscn" id="2_feqm6"]
 [ext_resource type="PackedScene" uid="uid://db2sh2ejarskd" path="res://src/Resources/Models/ControlPanel/SingleMonitor.glb" id="3_0xait"]
-[ext_resource type="Material" uid="uid://dsygek4t8pk8r" path="res://src/Resources/Materials/SpaceshipWindow.tres" id="4_rhc60"]
+[ext_resource type="Material" path="res://src/Resources/Materials/SpaceshipWindow.tres" id="4_rhc60"]
+[ext_resource type="ArrayMesh" uid="uid://pyjndvhm738q" path="res://src/Resources/Models/ControlPanel/VerticalScreen/model.obj" id="5_rorei"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4snno"]
 
@@ -13,6 +14,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.97987)
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 script = ExtResource("1_75e5r")
 Speed = 50.0
+RotationSpeed = 0.5
 Acceleration = 10.0
 MaxSpeed = 100.0
 
@@ -71,3 +73,18 @@ transform = Transform3D(4.045, 0, 0, 0, 4.045, 0, 0, 0, 4.045, 0, 0, 0)
 height = 0.0838871
 sides = 15
 material = ExtResource("4_rhc60")
+
+[node name="VerticalScreen" type="MeshInstance3D" parent="CharacterBody3D/Node3D"]
+transform = Transform3D(-0.341606, 0, -0.2081, 0, 0.4, 0, 0.2081, 0, -0.341606, -1.17047, -0.527278, -1.37467)
+mesh = ExtResource("5_rorei")
+skeleton = NodePath("../../..")
+
+[node name="ShadowBlocker" type="CSGBox3D" parent="CharacterBody3D/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.752415, -0.658689, 0, 0.658689, 0.752415, 0.194535, 2.90519, -3.38588)
+cast_shadow = 3
+size = Vector3(11.0962, 6.01014, 0.061)
+
+[node name="ShadowBlocker" type="CSGBox3D" parent="CharacterBody3D/Node3D/ShadowBlocker"]
+transform = Transform3D(1, 0, 0, 0, 0.752415, -0.658689, 0, 0.658689, 0.752415, 0.194535, 5.64978, -0.250755)
+cast_shadow = 3
+size = Vector3(11.0962, 6.01014, 0.061)
