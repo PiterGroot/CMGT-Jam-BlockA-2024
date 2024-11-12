@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://d15taga4pf0u5"]
+
+[ext_resource type="Script" path="res://src/Resources/Scenes/GravityController.cs" id="1_8p8qr"]
+
+[node name="Planets" type="Node3D" groups=["Planets"]]
+
+[node name="Planet" type="Node3D" parent="."]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Planet"]
+radius = 7.166
+radial_segments = 19
+rings = 29
+script = ExtResource("1_8p8qr")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00628376, -2.38419e-07, 12.7691)
+fov = 103.3
+far = 60000.0
