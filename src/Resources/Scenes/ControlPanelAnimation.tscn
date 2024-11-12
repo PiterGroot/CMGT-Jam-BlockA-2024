@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ijrtglbtofxe"]
+
+[ext_resource type="PackedScene" uid="uid://ciwtwflrrijpt" path="res://src/Resources/Models/ControlPanel/ControlPanel.glb" id="1_8dyrc"]
+[ext_resource type="Script" path="res://src/SpaceShip/ControlPanel.cs" id="2_wtmvn"]
+
+[node name="ControlPanel" node_paths=PackedStringArray("leftLever") instance=ExtResource("1_8dyrc")]
+script = ExtResource("2_wtmvn")
+leftLever = NodePath("group128226319")
+
+[node name="group128226319" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.023125, 0.00499975, -0.0625)
+visible = true

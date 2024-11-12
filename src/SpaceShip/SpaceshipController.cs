@@ -25,9 +25,17 @@ public partial class SpaceshipController : CharacterBody3D
 	private void HandleMovement(double delta)
 	{
 		if (Input.IsActionPressed("move_forward"))
+		{
 			_currentSpeed = Mathf.Min(_currentSpeed + (float)(Acceleration * delta), MaxSpeed);
+			EventBus.Publish("move_forward");
+		}
 		else if (Input.IsActionPressed("move_backward"))
+		{
+
 			_currentSpeed = Mathf.Max(_currentSpeed - (float)(Acceleration * delta), -MaxSpeed);
+			EventBus.Publish("move_backward");
+		}
+
 		else
 			_currentSpeed = Mathf.Lerp(_currentSpeed, 0, (float)(delta * 2));
 
@@ -39,9 +47,13 @@ public partial class SpaceshipController : CharacterBody3D
 		Vector3 rotationInput = Vector3.Zero;
 
 		if (Input.IsActionPressed("pitch_up"))
+		{
 			rotationInput.X += 1;
+		}
 		if (Input.IsActionPressed("pitch_down"))
+		{
 			rotationInput.X -= 1;
+		}
 
 		if (Input.IsActionPressed("yaw_left"))
 			rotationInput.Y += 1;

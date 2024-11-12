@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bcchkqf1qrvs1"]
 
 [ext_resource type="Script" path="res://src/SpaceShip/SpaceshipController.cs" id="1_75e5r"]
-[ext_resource type="PackedScene" uid="uid://ijrtglbtofxe" path="res://src/SpaceShip/ControlPanel.tscn" id="2_feqm6"]
+[ext_resource type="PackedScene" uid="uid://ijrtglbtofxe" path="res://src/Resources/Scenes/ControlPanelAnimation.tscn" id="2_feqm6"]
 [ext_resource type="PackedScene" uid="uid://db2sh2ejarskd" path="res://src/Resources/Models/ControlPanel/SingleMonitor.glb" id="3_0xait"]
 [ext_resource type="Material" uid="uid://dsygek4t8pk8r" path="res://src/Resources/Materials/SpaceshipWindow.tres" id="4_rhc60"]
 
