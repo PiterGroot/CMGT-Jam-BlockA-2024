@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://dpn322ukglkcc"]
+[gd_scene load_steps=3 format=3 uid="uid://dpn322ukglkcc"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://bd8fomssr0yw3" path="res://src/Resources/Scenes/ShipController.tscn" id="1_2nbd3"]
+[ext_resource type="PackedScene" uid="uid://bi4lkbcqqe1hr" path="res://src/Resources/Scenes/planet.tscn" id="2_skx6p"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="ShipController" parent="." instance=ExtResource("1_2nbd3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36.0628)
+
+[node name="Planet" parent="." instance=ExtResource("2_skx6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.91084, 0)
+
+[node name="Planet2" parent="." instance=ExtResource("2_skx6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.895023, 22.7007, -25.9079)

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi4lkbcqqe1hr"]
+
+[ext_resource type="Script" path="res://src/Resources/Scenes/PlanetData.cs" id="1_tvv7u"]
+
+[node name="Planet" type="Node3D"]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+radius = 9.071
+radial_segments = 19
+rings = 29
+script = ExtResource("1_tvv7u")
+GravityStrength = 200.0
+GravityRadius = 500.0
