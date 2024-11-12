@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bcchkqf1qrvs1"]
 
-[ext_resource type="Script" path="res://src/SpaceShip/SpaceshipController.cs" id="1_75e5r"]
+[ext_resource type="Script" path="res://src/SpaceShip/SpaceshipController.cs" id="1_so53r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4snno"]
 
@@ -8,7 +8,7 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.97987)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-script = ExtResource("1_75e5r")
+script = ExtResource("1_so53r")
 Speed = 50.0
 Acceleration = 10.0
 MaxSpeed = 100.0

@@ -1,0 +1,22 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmi0mx2hug6os"]
+
+[ext_resource type="PackedScene" uid="uid://7gqi8e23fww4" path="res://src/Resources/Models/Planets/Broken_Planet/Broken_Planet.fbx" id="1_bd30h"]
+[ext_resource type="PackedScene" uid="uid://dapiqmpfoplec" path="res://src/Resources/Models/Planets/Broken_Planet/Broken_Planet_Rings_01_LOD0.fbx" id="3_8iofa"]
+[ext_resource type="PackedScene" uid="uid://chjmqaq3iigco" path="res://src/Resources/Models/Planets/Broken_Planet/Broken_Planet_Rings_02_LOD0.fbx" id="4_qvvc5"]
+[ext_resource type="PackedScene" uid="uid://hhexkjalqu2q" path="res://src/Resources/Models/Planets/Broken_Planet/Broken_Planet_Rings_03_LOD0.fbx" id="5_oqgv6"]
+[ext_resource type="PackedScene" uid="uid://bi4lkbcqqe1hr" path="res://src/Resources/Scenes/planet.tscn" id="6_7f0we"]
+[ext_resource type="PackedScene" uid="uid://bnrf5taov6hpx" path="res://src/Resources/Models/Planets/Broken_Planet/Broken_Planet_Rings_LOD1.fbx" id="6_ht5b4"]
+
+[node name="BrokenPlanet" type="Node3D"]
+
+[node name="Broken_Planet" parent="." instance=ExtResource("1_bd30h")]
+
+[node name="Broken_Planet_Rings_01_LOD0" parent="." instance=ExtResource("3_8iofa")]
+
+[node name="Broken_Planet_Rings_02_LOD0" parent="." instance=ExtResource("4_qvvc5")]
+
+[node name="Broken_Planet_Rings_03_LOD0" parent="." instance=ExtResource("5_oqgv6")]
+
+[node name="Broken_Planet_Rings_LOD1" parent="." instance=ExtResource("6_ht5b4")]
+
+[node name="Planet" parent="." instance=ExtResource("6_7f0we")]

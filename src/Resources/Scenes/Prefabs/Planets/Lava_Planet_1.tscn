@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyqps5ekgrm7s"]
+
+[ext_resource type="PackedScene" uid="uid://xym2m7j5a1my" path="res://src/Resources/Models/Planets/Lava_Planet_01/Lava_Planet_01.fbx" id="1_agyby"]
+[ext_resource type="PackedScene" uid="uid://bi4lkbcqqe1hr" path="res://src/Resources/Scenes/planet.tscn" id="2_5guyr"]
+
+[node name="LavaPlanet1" type="Node3D"]
+
+[node name="Lava_Planet_01" parent="." instance=ExtResource("1_agyby")]
+
+[node name="Planet" parent="." instance=ExtResource("2_5guyr")]

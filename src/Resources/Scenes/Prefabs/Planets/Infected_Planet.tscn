@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://wvioxq5lvmvx"]
+
+[ext_resource type="PackedScene" uid="uid://cugtu3m8smljb" path="res://src/Resources/Models/Planets/Infected_Planet/Infected_Planet.fbx" id="1_grscc"]
+[ext_resource type="PackedScene" uid="uid://bi4lkbcqqe1hr" path="res://src/Resources/Scenes/planet.tscn" id="2_lqgtc"]
+
+[node name="InfectedPlanet" type="Node3D"]
+
+[node name="Infected_Planet" parent="." instance=ExtResource("1_grscc")]
+
+[node name="Planet" parent="." instance=ExtResource("2_lqgtc")]

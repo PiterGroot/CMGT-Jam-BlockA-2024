@@ -1,15 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpn322ukglkcc"]
+[gd_scene load_steps=4 format=3 uid="uid://dpn322ukglkcc"]
 
 [ext_resource type="PackedScene" uid="uid://bd8fomssr0yw3" path="res://src/Resources/Scenes/ShipController.tscn" id="1_2nbd3"]
-[ext_resource type="PackedScene" uid="uid://bi4lkbcqqe1hr" path="res://src/Resources/Scenes/planet.tscn" id="2_skx6p"]
+[ext_resource type="PackedScene" uid="uid://h4oei7xa0i84" path="res://src/Resources/Scenes/Prefabs/Planets/White_Drawf.tscn" id="3_7cxd5"]
+[ext_resource type="PackedScene" uid="uid://c0w0w64skppy4" path="res://src/Resources/Scenes/Prefabs/Planets/Blood_Planet.tscn" id="3_f67h0"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="ShipController" parent="." instance=ExtResource("1_2nbd3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36.0628)
 
-[node name="Planet" parent="." instance=ExtResource("2_skx6p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.91084, 0)
+[node name="BloodPlanet" parent="." instance=ExtResource("3_f67h0")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 7.11347, 0)
 
-[node name="Planet2" parent="." instance=ExtResource("2_skx6p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.895023, 22.7007, -25.9079)
+[node name="WhiteDrawf" parent="." instance=ExtResource("3_7cxd5")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 29.4387, -48.8667)

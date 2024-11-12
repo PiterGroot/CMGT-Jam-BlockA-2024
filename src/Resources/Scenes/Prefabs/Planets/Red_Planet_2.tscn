@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://2vapvbegk3xt"]
+
+[ext_resource type="PackedScene" uid="uid://5l86he33h1wf" path="res://src/Resources/Models/Planets/Red_Planet_02/Red_Planet_02.fbx" id="1_gu2lu"]
+[ext_resource type="PackedScene" uid="uid://bi4lkbcqqe1hr" path="res://src/Resources/Scenes/planet.tscn" id="2_ea00v"]
+
+[node name="RedPlanet2" type="Node3D"]
+
+[node name="Red_Planet_02" parent="." instance=ExtResource("1_gu2lu")]
+
+[node name="Planet" parent="." instance=ExtResource("2_ea00v")]

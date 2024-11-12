@@ -1,0 +1,22 @@
+[gd_scene load_steps=7 format=3 uid="uid://cr861xpuivnim"]
+
+[ext_resource type="PackedScene" uid="uid://g3cf5osuscd2" path="res://src/Resources/Models/Planets/Blue_Planet/Blue_Planet.fbx" id="1_noja6"]
+[ext_resource type="PackedScene" uid="uid://bstys748yf5np" path="res://src/Resources/Models/Planets/Blue_Planet/Blue_Planet_Rings_Lod1.fbx" id="2_60680"]
+[ext_resource type="PackedScene" uid="uid://k7rdxt5qfpxs" path="res://src/Resources/Models/Planets/Blue_Planet/Blue_Planet_Ring_01_LOD0.fbx" id="3_c8045"]
+[ext_resource type="PackedScene" uid="uid://br8wb0b8rfvyq" path="res://src/Resources/Models/Planets/Blue_Planet/Blue_Planet_Ring_01_LOD1.fbx" id="4_7miyk"]
+[ext_resource type="PackedScene" uid="uid://dvxyxad7q3evr" path="res://src/Resources/Models/Planets/Blue_Planet/Blue_Planet_Ring_02_LOD0.fbx" id="5_ul7iv"]
+[ext_resource type="PackedScene" uid="uid://byrfo2lmhcgyf" path="res://src/Resources/Models/Planets/Blue_Planet/Blue_Planet_Ring_02_LOD1.fbx" id="6_8cul6"]
+
+[node name="BluePlanet" type="Node3D"]
+
+[node name="Blue_Planet" parent="." instance=ExtResource("1_noja6")]
+
+[node name="Blue_Planet_Rings_Lod1" parent="." instance=ExtResource("2_60680")]
+
+[node name="Blue_Planet_Ring_01_LOD0" parent="." instance=ExtResource("3_c8045")]
+
+[node name="Blue_Planet_Ring_01_LOD1" parent="." instance=ExtResource("4_7miyk")]
+
+[node name="Blue_Planet_Ring_02_LOD0" parent="." instance=ExtResource("5_ul7iv")]
+
+[node name="Blue_Planet_Ring_02_LOD1" parent="." instance=ExtResource("6_8cul6")]

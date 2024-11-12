@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxdc3k8t45jx0"]
+
+[ext_resource type="PackedScene" uid="uid://c2ufqvdmm4crf" path="res://src/Resources/Models/Planets/Cream_Violet_Planet/Cream_Violet_Planet.fbx" id="1_n1kp7"]
+[ext_resource type="PackedScene" uid="uid://bi4lkbcqqe1hr" path="res://src/Resources/Scenes/planet.tscn" id="2_ncflf"]
+
+[node name="CreamVioletPlanet" type="Node3D"]
+
+[node name="Cream_Violet_Planet" parent="." instance=ExtResource("1_n1kp7")]
+
+[node name="Planet" parent="." instance=ExtResource("2_ncflf")]

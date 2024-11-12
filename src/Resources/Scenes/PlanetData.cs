@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class PlanetData : CsgSphere3D
+public partial class PlanetData : Node3D
 {
 	[Export] public float GravityStrength = 10.0f; 
 	[Export] public float GravityRadius = 100.0f;

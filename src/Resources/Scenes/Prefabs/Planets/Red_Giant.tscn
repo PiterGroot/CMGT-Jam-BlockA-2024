@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d264pboc84k8t"]
+
+[ext_resource type="PackedScene" uid="uid://ceqwuehwugn0u" path="res://src/Resources/Models/Planets/Red_Giant/Red_Giant.fbx" id="1_v7ytq"]
+[ext_resource type="PackedScene" uid="uid://bi4lkbcqqe1hr" path="res://src/Resources/Scenes/planet.tscn" id="2_y2ts5"]
+
+[node name="RedGiant" type="Node3D"]
+
+[node name="Red_Giant" parent="." instance=ExtResource("1_v7ytq")]
+
+[node name="Planet" parent="." instance=ExtResource("2_y2ts5")]

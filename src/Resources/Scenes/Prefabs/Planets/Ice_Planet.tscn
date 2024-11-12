@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://h37comet2arj"]
+
+[ext_resource type="PackedScene" uid="uid://clb6khtxofe" path="res://src/Resources/Models/Planets/Ice_Planet_01/Ice_Planet_01.fbx" id="1_a8slx"]
+[ext_resource type="PackedScene" uid="uid://bi4lkbcqqe1hr" path="res://src/Resources/Scenes/planet.tscn" id="2_3jkuj"]
+
+[node name="IcePlanet" type="Node3D"]
+
+[node name="Ice_Planet_01" parent="." instance=ExtResource("1_a8slx")]
+
+[node name="Planet" parent="." instance=ExtResource("2_3jkuj")]
