@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcchkqf1qrvs1"]
+[gd_scene load_steps=6 format=3 uid="uid://bcchkqf1qrvs1"]
 
 [ext_resource type="Script" path="res://src/SpaceShip/SpaceshipController.cs" id="1_75e5r"]
+[ext_resource type="ArrayMesh" uid="uid://d17xbuxg1uebs" path="res://src/Resources/Models/ControlPanel/model.obj" id="2_p76ag"]
+[ext_resource type="PackedScene" uid="uid://db2sh2ejarskd" path="res://src/Resources/Models/ControlPanel/SingleMonitor.glb" id="3_0xait"]
+[ext_resource type="Material" uid="uid://dsygek4t8pk8r" path="res://src/Resources/Materials/SpaceshipWindow.tres" id="4_rhc60"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4snno"]
 
@@ -19,4 +22,54 @@ shape = SubResource("BoxShape3D_4snno")
 [node name="SpaceShip" type="CSGBox3D" parent="CharacterBody3D"]
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.346911)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, -0.217)
+
+[node name="Node3D" type="Node3D" parent="CharacterBody3D"]
+
+[node name="Panel" type="MeshInstance3D" parent="CharacterBody3D/Node3D"]
+transform = Transform3D(3, 0, 0, 0, 2.75534, -1.18664, 0, 1.18664, 2.75534, 0, -0.375, -1.156)
+mesh = ExtResource("2_p76ag")
+skeleton = NodePath("../../..")
+
+[node name="SingleMonitor" parent="CharacterBody3D/Node3D" instance=ExtResource("3_0xait")]
+transform = Transform3D(0.020221, 0.00494622, -0.00711667, 0, 0.0180653, 0.0125557, 0.00866672, -0.0115404, 0.0166044, 0.527674, -0.63334, -1.11915)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CharacterBody3D/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.331516, -0.703155, -1.67809)
+size = Vector3(5.50159, 0.921008, 0.061)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CharacterBody3D/Node3D/CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.44949, 1.51293, 1.40488)
+size = Vector3(2.91477, 4.26222, 0.061)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CharacterBody3D/Node3D/CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.64631, 1.51293, 1.40488)
+size = Vector3(2.91477, 4.26222, 0.061)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CharacterBody3D/Node3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 0.384698, 0.923042, 0, -0.923042, 0.384698, 0.223526, -0.013374, 0.465135)
+size = Vector3(5.1373, 1.10003, 0.061)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CharacterBody3D/Node3D/CSGBox3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 0.411403, -0.911453, 0, 0.911453, 0.411403, 0.312874, -1.42816, 2.51523)
+size = Vector3(6.25625, 4.26222, 0.061)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CharacterBody3D/Node3D/CSGBox3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 0.911453, 0.411403, 0, -0.411403, 0.911453, 0.156437, 0.898988, 3.29033)
+size = Vector3(6.25625, 3.78028, 0.061)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CharacterBody3D/Node3D/CSGBox3D/CSGBox3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.156437, -0.622311, -3.96608)
+size = Vector3(6.25625, 2.86463, 0.439558)
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="CharacterBody3D/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.240685, -0.970603, 0, 0.970603, 0.240685, 0, 0, -1.83453)
+inner_radius = 2.766
+outer_radius = 2.203
+sides = 19
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CharacterBody3D/Node3D/CSGTorus3D"]
+transform = Transform3D(4.045, 0, 0, 0, 4.045, 0, 0, 0, 4.045, 0, 0, 0)
+height = 0.0838871
+sides = 15
+material = ExtResource("4_rhc60")
