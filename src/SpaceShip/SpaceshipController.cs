@@ -29,9 +29,15 @@ public partial class SpaceshipController : CharacterBody3D
 	private void HandleMovement(double delta)
 	{
 		if (Input.IsActionPressed("move_forward") && SpaceShipFuel.CurrentFuel > 0)
+		{
 			_currentSpeed = Mathf.Min(_currentSpeed + (float)(Acceleration * delta), MaxSpeed);
+			EventBus.Publish("move_forward");
+		}
 		else if (Input.IsActionPressed("move_backward") && SpaceShipFuel.CurrentFuel > 0)
+		{
 			_currentSpeed = Mathf.Max(_currentSpeed - (float)(Acceleration * delta), -MaxSpeed);
+			EventBus.Publish("move_backward");
+		}
 		else
 			_currentSpeed = Mathf.Lerp(_currentSpeed, 0, (float)(delta * 2));
 
