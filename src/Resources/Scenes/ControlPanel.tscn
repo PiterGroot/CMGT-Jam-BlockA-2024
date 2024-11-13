@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfrrwyk7bymqi"]
+[gd_scene load_steps=6 format=3 uid="uid://cmt1k5v0eli0b"]
 
 [ext_resource type="PackedScene" uid="uid://bcchkqf1qrvs1" path="res://src/Resources/Scenes/space_ship_controller.tscn" id="1_ws2ut"]
 [ext_resource type="Material" uid="uid://cas7k84jpi47b" path="res://src/Resources/Materials/TestMat.tres" id="2_q4yuj"]
