@@ -8,3 +8,4 @@
 [node name="Erath Like Planet_01" parent="." instance=ExtResource("1_cka48")]
 
 [node name="Planet" parent="." instance=ExtResource("2_3ss7l")]
+transform = Transform3D(10.3508, 0, 0, 0, 9.91519, 0, 0, 0, 9.83532, 0, 0, 0)
