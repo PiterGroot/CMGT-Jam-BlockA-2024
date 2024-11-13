@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d15taga4pf0u5"]
+
+[ext_resource type="PackedScene" uid="uid://bi4lkbcqqe1hr" path="res://src/Resources/Scenes/planet.tscn" id="1_cj5ju"]
+[ext_resource type="PackedScene" uid="uid://bd8fomssr0yw3" path="res://src/Resources/Scenes/ShipController.tscn" id="2_fu02r"]
+
+[node name="Planets" type="Node3D" groups=["Planets"]]
+
+[node name="Planet" parent="." instance=ExtResource("1_cj5ju")]
+
+[node name="ShipController" parent="." instance=ExtResource("2_fu02r")]

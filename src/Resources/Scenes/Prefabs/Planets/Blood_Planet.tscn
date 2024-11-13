@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0w0w64skppy4"]
+
+[ext_resource type="PackedScene" uid="uid://baxt7w6eosg28" path="res://src/Resources/Models/Planets/Blood Planet/Blood_Planet.fbx" id="1_1u27s"]
+[ext_resource type="PackedScene" uid="uid://bi4lkbcqqe1hr" path="res://src/Resources/Scenes/planet.tscn" id="2_cmax8"]
+
+[node name="BloodPlanet" type="Node3D"]
+
+[node name="Blood_Planet" parent="." instance=ExtResource("1_1u27s")]
+
+[node name="Planet" parent="." instance=ExtResource("2_cmax8")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 0, 0)

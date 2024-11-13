@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx3d5slbifaty"]
+
+[ext_resource type="PackedScene" uid="uid://d13pewhqorw7m" path="res://src/Resources/Models/Planets/Sand_Planet_01/Sand_Planet_01.fbx" id="1_nmghp"]
+[ext_resource type="PackedScene" uid="uid://bi4lkbcqqe1hr" path="res://src/Resources/Scenes/planet.tscn" id="2_6fhk8"]
+
+[node name="SandPlanet" type="Node3D"]
+
+[node name="Sand_Planet_01" parent="." instance=ExtResource("1_nmghp")]
+
+[node name="Planet" parent="." instance=ExtResource("2_6fhk8")]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1wgiy8ww3gs4"]
+
+[ext_resource type="PackedScene" uid="uid://b2aw2fhvpu6wb" path="res://src/Resources/Models/Planets/Erath Like Planet_01/Erath Like Planet_01.fbx" id="1_cka48"]
+[ext_resource type="PackedScene" uid="uid://bi4lkbcqqe1hr" path="res://src/Resources/Scenes/planet.tscn" id="2_3ss7l"]
+
+[node name="Earth1" type="Node3D"]
+
+[node name="Erath Like Planet_01" parent="." instance=ExtResource("1_cka48")]
+
+[node name="Planet" parent="." instance=ExtResource("2_3ss7l")]

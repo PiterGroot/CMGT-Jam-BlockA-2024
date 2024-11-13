@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://h4oei7xa0i84"]
+
+[ext_resource type="PackedScene" uid="uid://c53m6g53ufk5s" path="res://src/Resources/Models/Planets/White_Dwarf/White_Dwarf.fbx" id="1_t3vl5"]
+[ext_resource type="PackedScene" uid="uid://bi4lkbcqqe1hr" path="res://src/Resources/Scenes/planet.tscn" id="2_8sdva"]
+
+[node name="WhiteDrawf" type="Node3D"]
+
+[node name="White_Dwarf" parent="." instance=ExtResource("1_t3vl5")]
+
+[node name="Planet" parent="." instance=ExtResource("2_8sdva")]

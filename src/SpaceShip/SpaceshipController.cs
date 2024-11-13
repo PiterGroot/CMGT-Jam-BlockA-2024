@@ -1,5 +1,6 @@
 using Godot;
 
+
 public partial class SpaceshipController : CharacterBody3D
 {
 	[Export] public float Speed = 10f;
@@ -7,6 +8,7 @@ public partial class SpaceshipController : CharacterBody3D
 	[Export] public float Acceleration = 1f;
 	[Export] public float MaxSpeed = 50f;
 	[Export] public float RotationSmoothing = 5f;
+	[Export] public float CollisionRadius = 10f;
 
 	[Export] private SpaceShipFuel SpaceShipFuel;
 
@@ -14,16 +16,22 @@ public partial class SpaceshipController : CharacterBody3D
 	private Vector3 _velocity = Vector3.Zero;
 	private Vector3 _rotationVelocity = Vector3.Zero;
 
+	private PlanetData _nearestPlanet = null; 
+
 	public override void _PhysicsProcess(double delta)
 	{
 		HandleMovement(delta);
 		HandleRotation(delta);
 
 		_velocity = -Transform.Basis.Z * _currentSpeed;
+		
+		ApplyGravity(delta);
+		
 		Velocity = _velocity;
 
 		if (Mathf.Abs(_currentSpeed) > 1f) SpaceShipFuel.OnMove();
 		MoveAndSlide();
+		DetectPlanetCollision();
 	}
 
 	private void HandleMovement(double delta)
@@ -68,5 +76,59 @@ public partial class SpaceshipController : CharacterBody3D
 		RotateObjectLocal(Vector3.Right, _rotationVelocity.X * (float)delta);
 		RotateObjectLocal(Vector3.Up, _rotationVelocity.Y * (float)delta);
 		RotateObjectLocal(Vector3.Forward, _rotationVelocity.Z * (float)delta);
+	}
+
+	private void UpdateNearestPlanet()
+	{
+		float closestDistance = float.MaxValue;
+		_nearestPlanet = null;
+
+		foreach (Node node in GetTree().GetNodesInGroup("planets"))
+		{
+			if (node is PlanetData planet)
+			{
+				float distance = GlobalTransform.Origin.DistanceTo(planet.GlobalTransform.Origin);
+
+				// Check if within the planet's gravitational radius and if it's the closest one
+				if (distance < planet.GravityRadius && distance < closestDistance)
+				{
+					closestDistance = distance;
+					_nearestPlanet = planet;
+				}
+			}
+		}
+	}
+	
+	private void DetectPlanetCollision()
+	{
+		if (_nearestPlanet != null)
+		{
+			// Get the distance to the planet
+			float distanceToPlanet = GlobalPosition.DistanceTo(_nearestPlanet.GlobalPosition);
+
+			if (distanceToPlanet <= CollisionRadius)
+			{
+				OnCollisionWithPlanet();
+			}
+		}
+	}
+	
+	public void OnCollisionWithPlanet()
+	{
+		GD.Print("Player has collided with the planet! Triggering death screen...");
+	}
+
+	private void ApplyGravity(double delta)
+	{
+		UpdateNearestPlanet();  // Find the nearest planet within range
+		
+		if (_nearestPlanet != null)
+		{
+			Vector3 directionToPlanet = (_nearestPlanet.GlobalTransform.Origin - GlobalTransform.Origin).Normalized();
+			Vector3 gravitationalPull = directionToPlanet * _nearestPlanet.GravityStrength * (float)delta;
+
+			// Apply gravitational pull to the spaceship's velocity
+			_velocity += gravitationalPull;
+		}
 	}
 }

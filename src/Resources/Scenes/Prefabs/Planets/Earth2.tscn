@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://mchssx5uq8ll"]
+
+[ext_resource type="PackedScene" uid="uid://d1cji8yebv53n" path="res://src/Resources/Models/Planets/Erath Like Planet_02/Eart Like Planet_02.fbx" id="1_rcf30"]
+[ext_resource type="PackedScene" uid="uid://bi4lkbcqqe1hr" path="res://src/Resources/Scenes/planet.tscn" id="2_ty8jm"]
+
+[node name="Earth2" type="Node3D"]
+
+[node name="Eart Like Planet_02" parent="." instance=ExtResource("1_rcf30")]
+
+[node name="Planet" parent="." instance=ExtResource("2_ty8jm")]
