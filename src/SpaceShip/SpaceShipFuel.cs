@@ -15,5 +15,6 @@ public partial class SpaceShipFuel : Node
 	public void OnMove()
 	{
 		CurrentFuel = (float)Mathf.Clamp(CurrentFuel - GetProcessDeltaTime() * moveFuelConsumption, 0, maxFuel);
+		EventBus.Publish("fuel_update", CurrentFuel);
 	}
 }
