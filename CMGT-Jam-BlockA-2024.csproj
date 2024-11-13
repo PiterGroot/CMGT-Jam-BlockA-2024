@@ -6,4 +6,7 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>CMGTJamBlockA2024</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="src\Resources\Scenes\" />
+  </ItemGroup>
 </Project>

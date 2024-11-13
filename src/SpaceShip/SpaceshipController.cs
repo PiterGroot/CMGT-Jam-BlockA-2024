@@ -10,6 +10,8 @@ public partial class SpaceshipController : CharacterBody3D
 	[Export] public float RotationSmoothing = 5f;
 	[Export] public float CollisionRadius = 10f;
 
+	[Export] private SpaceShipFuel SpaceShipFuel;
+
 	private float _currentSpeed = 0f;
 	private Vector3 _velocity = Vector3.Zero;
 	private Vector3 _rotationVelocity = Vector3.Zero;
@@ -26,20 +28,28 @@ public partial class SpaceshipController : CharacterBody3D
 		ApplyGravity(delta);
 		
 		Velocity = _velocity;
+
+		if (Mathf.Abs(_currentSpeed) > 1f) SpaceShipFuel.OnMove();
 		MoveAndSlide();
 		DetectPlanetCollision();
 	}
 
 	private void HandleMovement(double delta)
 	{
-		if (Input.IsActionPressed("move_forward"))
+		if (Input.IsActionPressed("move_forward") && SpaceShipFuel.CurrentFuel > 0)
+		{
 			_currentSpeed = Mathf.Min(_currentSpeed + (float)(Acceleration * delta), MaxSpeed);
-		else if (Input.IsActionPressed("move_backward"))
+			EventBus.Publish("move_forward");
+		}
+		else if (Input.IsActionPressed("move_backward") && SpaceShipFuel.CurrentFuel > 0)
+		{
 			_currentSpeed = Mathf.Max(_currentSpeed - (float)(Acceleration * delta), -MaxSpeed);
+			EventBus.Publish("move_backward");
+		}
 		else
 			_currentSpeed = Mathf.Lerp(_currentSpeed, 0, (float)(delta * 2));
 
-		_currentSpeed = Mathf.Clamp(_currentSpeed, -MaxSpeed, MaxSpeed);
+			_currentSpeed = Mathf.Clamp(_currentSpeed, -MaxSpeed, MaxSpeed);
 	}
 
 	private void HandleRotation(double delta)
