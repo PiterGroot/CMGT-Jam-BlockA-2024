@@ -1,0 +1,143 @@
+[gd_scene load_steps=12 format=3 uid="uid://bcchkqf1qrvs1"]
+
+[ext_resource type="Script" path="res://src/SpaceShip/SpaceshipController.cs" id="1_75e5r"]
+[ext_resource type="Script" path="res://src/SpaceShip/SpaceShipFuel.cs" id="2_amv7l"]
+[ext_resource type="PackedScene" uid="uid://eodeg8agbu4t" path="res://src/Resources/Models/ControlPanel/ControlPanelAnimation.tscn" id="2_feqm6"]
+[ext_resource type="PackedScene" uid="uid://db2sh2ejarskd" path="res://src/Resources/Models/ControlPanel/SingleMonitor.glb" id="3_0xait"]
+[ext_resource type="Material" path="res://src/Resources/Materials/SpaceshipWindow.tres" id="4_rhc60"]
+[ext_resource type="ArrayMesh" uid="uid://pyjndvhm738q" path="res://src/Resources/Models/ControlPanel/VerticalScreen/model.obj" id="5_rorei"]
+[ext_resource type="Script" path="res://src/SpaceShip/FuelScreen.cs" id="7_gkfb2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4snno"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_und7c"]
+viewport_path = NodePath("CharacterBody3D/Node3D/VerticalScreen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvwcp"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_und7c")
+emission = Color(0.981191, 0.130708, 1.92523e-07, 1)
+emission_energy_multiplier = 5.44
+emission_operator = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abmut"]
+bg_color = Color(1, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5, 0, 0, 1)
+
+[node name="SpaceShipController" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.97987)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." node_paths=PackedStringArray("SpaceShipFuel")]
+script = ExtResource("1_75e5r")
+Speed = 50.0
+RotationSpeed = 0.5
+Acceleration = 10.0
+MaxSpeed = 100.0
+SpaceShipFuel = NodePath("SpaceshipFuel")
+
+[node name="SpaceshipFuel" type="Node" parent="CharacterBody3D"]
+script = ExtResource("2_amv7l")
+moveFuelConsumption = 7.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("BoxShape3D_4snno")
+
+[node name="SpaceShip" type="CSGBox3D" parent="CharacterBody3D"]
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, -0.217)
+
+[node name="Node3D" type="Node3D" parent="CharacterBody3D"]
+
+[node name="ControlPanel" parent="CharacterBody3D/Node3D" instance=ExtResource("2_feqm6")]
+transform = Transform3D(-3.375, 7.24072e-08, -3.72694e-07, -2.01232e-07, 2.46824, 2.30183, 3.21945e-07, 2.30183, -2.46824, 0.0667839, -0.410311, -1.49269)
+
+[node name="SingleMonitor" parent="CharacterBody3D/Node3D" instance=ExtResource("3_0xait")]
+transform = Transform3D(0.020221, 0.00494622, -0.00711667, 0, 0.0180653, 0.0125557, 0.00866672, -0.0115404, 0.0166044, 0.527674, -0.63334, -1.11915)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CharacterBody3D/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.331516, -0.703155, -1.67809)
+size = Vector3(5.50159, 0.921008, 0.061)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CharacterBody3D/Node3D/CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.44949, 1.51293, 1.40488)
+size = Vector3(2.91477, 4.26222, 0.061)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CharacterBody3D/Node3D/CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.64631, 1.51293, 1.40488)
+size = Vector3(2.91477, 4.26222, 0.061)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CharacterBody3D/Node3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 0.384698, 0.923042, 0, -0.923042, 0.384698, 0.223526, -0.013374, 0.465135)
+size = Vector3(5.1373, 1.10003, 0.061)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CharacterBody3D/Node3D/CSGBox3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 0.411403, -0.911453, 0, 0.911453, 0.411403, 0.312874, -1.42816, 2.51523)
+size = Vector3(6.25625, 4.26222, 0.061)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CharacterBody3D/Node3D/CSGBox3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 0.911453, 0.411403, 0, -0.411403, 0.911453, 0.156437, 0.898988, 3.29033)
+size = Vector3(6.25625, 3.78028, 0.061)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CharacterBody3D/Node3D/CSGBox3D/CSGBox3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.156437, -0.622311, -3.96608)
+size = Vector3(6.25625, 2.86463, 0.439558)
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="CharacterBody3D/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.240685, -0.970603, 0, 0.970603, 0.240685, 0, 0, -1.83453)
+inner_radius = 2.766
+outer_radius = 2.203
+sides = 19
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CharacterBody3D/Node3D/CSGTorus3D"]
+transform = Transform3D(4.045, 0, 0, 0, 4.045, 0, 0, 0, 4.045, 0, 0, 0)
+height = 0.0838871
+sides = 15
+material = ExtResource("4_rhc60")
+
+[node name="VerticalScreen" type="MeshInstance3D" parent="CharacterBody3D/Node3D" node_paths=PackedStringArray("progressBar")]
+transform = Transform3D(-0.341606, 0, -0.2081, 0, 0.4, 0, 0.2081, 0, -0.341606, -1.16879, -0.52101, -1.37884)
+mesh = ExtResource("5_rorei")
+skeleton = NodePath("../../..")
+script = ExtResource("7_gkfb2")
+progressBar = NodePath("SubViewport/Control/ProgressBar")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CharacterBody3D/Node3D/VerticalScreen"]
+transform = Transform3D(1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, 1, -0.000572205, 0.894374, 0.525902)
+material_override = SubResource("StandardMaterial3D_rvwcp")
+size = Vector3(0.782349, 1.88586, 1)
+
+[node name="SubViewport" type="SubViewport" parent="CharacterBody3D/Node3D/VerticalScreen"]
+size = Vector2i(50, 512)
+
+[node name="Control" type="Control" parent="CharacterBody3D/Node3D/VerticalScreen/SubViewport"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 6.0
+offset_right = 50.0
+offset_bottom = 46.0
+
+[node name="ProgressBar" type="ProgressBar" parent="CharacterBody3D/Node3D/VerticalScreen/SubViewport/Control"]
+layout_mode = 0
+offset_left = -9.66
+offset_right = 40.32
+offset_bottom = 505.23
+theme_override_styles/fill = SubResource("StyleBoxFlat_abmut")
+value = 100.0
+fill_mode = 2
+show_percentage = false
+
+[node name="ShadowBlocker" type="CSGBox3D" parent="CharacterBody3D/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.752415, -0.658689, 0, 0.658689, 0.752415, 0.194535, 2.90519, -3.38588)
+cast_shadow = 3
+size = Vector3(11.0962, 6.01014, 0.061)
+
+[node name="ShadowBlocker" type="CSGBox3D" parent="CharacterBody3D/Node3D/ShadowBlocker"]
+transform = Transform3D(1, 0, 0, 0, 0.752415, -0.658689, 0, 0.658689, 0.752415, 0.194535, 5.64978, -0.250755)
+cast_shadow = 3
+size = Vector3(11.0962, 6.01014, 0.061)
