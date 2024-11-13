@@ -16,6 +16,7 @@ SpaceShipFuel = NodePath("SpaceshipFuel")
 
 [node name="SpaceshipFuel" type="Node" parent="CharacterBody3D"]
 script = ExtResource("1_bhoe8")
+moveFuelConsumption = 25.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("BoxShape3D_4snno")

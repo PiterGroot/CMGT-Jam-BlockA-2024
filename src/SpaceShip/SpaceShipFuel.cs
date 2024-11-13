@@ -1,20 +1,19 @@
 using Godot;
-using System;
 
 public partial class SpaceShipFuel : Node
 {
 	[Export] private float maxFuel = 100;
-	[Export] private float moveFuelConsumption = 1.5f;
+	[Export] private float moveFuelConsumption = 2f;
 
-	private float currentFuel = 0;
+	public float CurrentFuel { get; private set; } = 0;
 
 	public override void _Ready()
 	{
-		currentFuel = maxFuel;
+		CurrentFuel = maxFuel;
 	}
 
 	public void OnMove()
 	{
-		currentFuel = (float)Mathf.Clamp(currentFuel - moveFuelConsumption * GetProcessDeltaTime(), 0, maxFuel);
+		CurrentFuel = (float)Mathf.Clamp(CurrentFuel - GetProcessDeltaTime() * moveFuelConsumption, 0, maxFuel);
 	}
 }

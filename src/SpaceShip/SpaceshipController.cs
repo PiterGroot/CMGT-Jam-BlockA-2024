@@ -22,20 +22,20 @@ public partial class SpaceshipController : CharacterBody3D
 		_velocity = -Transform.Basis.Z * _currentSpeed;
 		Velocity = _velocity;
 
-		if (Velocity.Length() > 0) SpaceShipFuel.OnMove();
+		if (Mathf.Abs(_currentSpeed) > 1f) SpaceShipFuel.OnMove();
 		MoveAndSlide();
 	}
 
 	private void HandleMovement(double delta)
 	{
-		if (Input.IsActionPressed("move_forward"))
+		if (Input.IsActionPressed("move_forward") && SpaceShipFuel.CurrentFuel > 0)
 			_currentSpeed = Mathf.Min(_currentSpeed + (float)(Acceleration * delta), MaxSpeed);
-		else if (Input.IsActionPressed("move_backward"))
+		else if (Input.IsActionPressed("move_backward") && SpaceShipFuel.CurrentFuel > 0)
 			_currentSpeed = Mathf.Max(_currentSpeed - (float)(Acceleration * delta), -MaxSpeed);
 		else
 			_currentSpeed = Mathf.Lerp(_currentSpeed, 0, (float)(delta * 2));
 
-		_currentSpeed = Mathf.Clamp(_currentSpeed, -MaxSpeed, MaxSpeed);
+			_currentSpeed = Mathf.Clamp(_currentSpeed, -MaxSpeed, MaxSpeed);
 	}
 
 	private void HandleRotation(double delta)
