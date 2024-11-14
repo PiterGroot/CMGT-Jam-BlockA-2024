@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ov6v7vfir1ye"]
+[gd_scene load_steps=14 format=3 uid="uid://cmw6gju5xwhxm"]
 
 [ext_resource type="PackedScene" uid="uid://bmi0mx2hug6os" path="res://src/Resources/Scenes/Prefabs/Planets/Broken_Planet.tscn" id="1_kaps5"]
 [ext_resource type="Script" path="res://src/UI/PlanetSpin.cs" id="2_wsmxu"]

@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6wn1j88ewwdb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3kpot"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_0rbgm"]
+sky_material = SubResource("ProceduralSkyMaterial_3kpot")
+
+[sub_resource type="Environment" id="Environment_d51gm"]
+background_mode = 2
+sky = SubResource("Sky_0rbgm")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_vae14"]
+font_size = 46
+outline_size = 25
+outline_color = Color(0, 0, 0, 1)
+
+[node name="LevelSelectMenu" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_d51gm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="UI" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="UI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -148.0
+offset_top = 25.0
+offset_right = 151.0
+offset_bottom = 89.0
+grow_horizontal = 2
+text = "LEVEL SELECT"
+label_settings = SubResource("LabelSettings_vae14")
