@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bcchkqf1qrvs1"]
+[gd_scene load_steps=13 format=3 uid="uid://bcchkqf1qrvs1"]
 
 [ext_resource type="Script" path="res://src/SpaceShip/SpaceshipController.cs" id="1_75e5r"]
 [ext_resource type="Script" path="res://src/SpaceShip/SpaceShipFuel.cs" id="2_amv7l"]
@@ -14,12 +14,17 @@ radius = 3.17569
 [sub_resource type="ViewportTexture" id="ViewportTexture_und7c"]
 viewport_path = NodePath("CharacterBody3D/Node3D/VerticalScreen/SubViewport")
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_fmplt"]
+viewport_path = NodePath("CharacterBody3D/Node3D/VerticalScreen/SubViewport")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvwcp"]
 resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_und7c")
-emission = Color(0.981191, 0.130708, 1.92523e-07, 1)
-emission_energy_multiplier = 5.44
+emission_enabled = true
+emission = Color(0.971127, 0, 0.253146, 1)
+emission_energy_multiplier = 3.42
 emission_operator = 1
+emission_texture = SubResource("ViewportTexture_fmplt")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abmut"]
 bg_color = Color(1, 0, 0, 1)
@@ -129,9 +134,14 @@ offset_left = -9.66
 offset_right = 40.32
 offset_bottom = 505.23
 theme_override_styles/fill = SubResource("StyleBoxFlat_abmut")
-value = 100.0
+value = 60.34
 fill_mode = 2
 show_percentage = false
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CharacterBody3D/Node3D/VerticalScreen"]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0.255149, 1.42026, -0.824103)
+light_color = Color(0.33, 0, 0, 1)
+light_energy = 1.162
 
 [node name="ShadowBlocker" type="CSGBox3D" parent="CharacterBody3D/Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.752415, -0.658689, 0, 0.658689, 0.752415, 0.194535, 2.90519, -3.38588)
