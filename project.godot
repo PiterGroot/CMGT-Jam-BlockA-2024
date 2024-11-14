@@ -19,10 +19,6 @@ config/icon="res://src/Resources/Textures/icon.svg"
 
 project/assembly_name="CMGT-Jam-BlockA-2024"
 
-[global_group]
-
-planets=""
-
 [input]
 
 move_forward={

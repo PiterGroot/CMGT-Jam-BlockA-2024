@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://cge0cpytyiyuo"]
+
+[ext_resource type="PackedScene" uid="uid://1kyemv7gh3w0" path="res://src/Resources/Scenes/ShipController.tscn" id="1_0a4ub"]
+[ext_resource type="PackedScene" uid="uid://dyqps5ekgrm7s" path="res://src/Resources/Scenes/Prefabs/Planets/Lava_Planet_1.tscn" id="2_hjlh6"]
+[ext_resource type="PackedScene" uid="uid://bnail54l2sbwc" path="res://src/Resources/Scenes/Prefabs/Planets/Lava_Planet_2.tscn" id="3_6pm40"]
+[ext_resource type="PackedScene" uid="uid://cts1mtufhlt64" path="res://src/Resources/Scenes/Prefabs/Planets/Lava_Planet_3.tscn" id="4_t5hwa"]
+[ext_resource type="PackedScene" uid="uid://d264pboc84k8t" path="res://src/Resources/Scenes/Prefabs/Planets/Red_Giant.tscn" id="5_mi1b1"]
+
+[node name="Level2" type="Node3D"]
+
+[node name="ShipController" parent="." instance=ExtResource("1_0a4ub")]
+
+[node name="Planets" type="Node" parent="."]
+
+[node name="LavaPlanet1" parent="Planets" instance=ExtResource("2_hjlh6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 147.104, -347.624)
+
+[node name="LavaPlanet2" parent="Planets" instance=ExtResource("3_6pm40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2357, 405.351, -710.492)
+
+[node name="LavaPlanet3" parent="Planets" instance=ExtResource("4_t5hwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 229.511, 720.484, -871.491)
+
+[node name="RedGiant" parent="Planets" instance=ExtResource("5_mi1b1")]
+transform = Transform3D(1, 0, 0, 0, 0.997975, 0.0636092, 0, -0.0636092, 0.997975, 122.629, 1286.89, -1117.32)

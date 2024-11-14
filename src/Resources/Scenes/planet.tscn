@@ -5,17 +5,16 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_r4uur"]
 
 [node name="Planet" type="Node3D" groups=["planets"]]
-transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 0, 0)
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." groups=["planets"]]
 visible = false
 use_collision = true
-radius = 10.0
+radius = 90.0
 radial_segments = 10
 rings = 10
 script = ExtResource("1_tvv7u")
 GravityStrength = 500.0
 GravityRadius = 500.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGSphere3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGSphere3D" groups=["planets"]]
 shape = SubResource("SphereShape3D_r4uur")
