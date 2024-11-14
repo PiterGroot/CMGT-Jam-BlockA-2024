@@ -103,7 +103,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_p6ycu")
 text = "Level Select"
 flat = true
 script = ExtResource("6_82v8k")
-_scenePath = "res://src/Resources/Scenes/ShipController.tscn"
+_scenePath = "res://src/Resources/Scenes/LevelSelectMenu.tscn"
 
 [node name="Quit" type="Button" parent="MainMenu"]
 offset_left = 33.0
