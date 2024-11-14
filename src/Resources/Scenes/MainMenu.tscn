@@ -1,0 +1,119 @@
+[gd_scene load_steps=14 format=3 uid="uid://ov6v7vfir1ye"]
+
+[ext_resource type="PackedScene" uid="uid://bmi0mx2hug6os" path="res://src/Resources/Scenes/Prefabs/Planets/Broken_Planet.tscn" id="1_kaps5"]
+[ext_resource type="Script" path="res://src/UI/PlanetSpin.cs" id="2_wsmxu"]
+[ext_resource type="PackedScene" uid="uid://bu7vntt7fknho" path="res://src/Resources/Scenes/Prefabs/Planets/Ice_Planet2.tscn" id="3_2hmcd"]
+[ext_resource type="PackedScene" uid="uid://2vapvbegk3xt" path="res://src/Resources/Scenes/Prefabs/Planets/Red_Planet_2.tscn" id="4_rup3y"]
+[ext_resource type="PackedScene" uid="uid://h4oei7xa0i84" path="res://src/Resources/Scenes/Prefabs/Planets/White_Drawf.tscn" id="5_ck62y"]
+[ext_resource type="Script" path="res://src/UI/SceneSwitcherButton.cs" id="6_82v8k"]
+[ext_resource type="Script" path="res://src/UI/QuitButton.cs" id="7_vjupa"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6axa6"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_ytit2"]
+sky_material = SubResource("ProceduralSkyMaterial_6axa6")
+
+[sub_resource type="Environment" id="Environment_5ged7"]
+background_mode = 2
+sky = SubResource("Sky_ytit2")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_worph"]
+resource_local_to_scene = true
+font_size = 41
+outline_size = 30
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cy00t"]
+font_size = 26
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6ycu"]
+bg_color = Color(0.1, 0.1, 0.1, 1)
+
+[node name="MenuTest" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5ged7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 718.285)
+
+[node name="BrokenPlanet" parent="." instance=ExtResource("1_kaps5")]
+transform = Transform3D(0.935684, 0.352838, 0, -0.347211, 0.920763, -0.177875, -0.062761, 0.166435, 0.984053, 0.32988, -160.397, -5.8489)
+script = ExtResource("2_wsmxu")
+spinSpeed = 0.05
+
+[node name="IcePlanet2" parent="." instance=ExtResource("3_2hmcd")]
+transform = Transform3D(1, 0, 0, 0, 0.679467, -0.733706, 0, 0.733706, 0.679467, 288.698, 140.993, 374.719)
+script = ExtResource("2_wsmxu")
+spinSpeed = 0.035
+
+[node name="RedPlanet2" parent="." instance=ExtResource("4_rup3y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -781.897, 148.359, -741.483)
+script = ExtResource("2_wsmxu")
+spinSpeed = 1.0
+
+[node name="WhiteDrawf" parent="." instance=ExtResource("5_ck62y")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.603394, 590.22, -983.453)
+script = ExtResource("2_wsmxu")
+
+[node name="MainMenu" type="Node" parent="."]
+
+[node name="Title" type="Label" parent="MainMenu"]
+offset_left = 33.0
+offset_top = 63.0
+offset_right = 285.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 31
+text = "SPACE GAME"
+label_settings = SubResource("LabelSettings_worph")
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="MainMenu"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = -52.0
+offset_right = 415.0
+offset_bottom = -16.0
+grow_vertical = 0
+text = "By Daniel Nijkamp & Piter Groot"
+label_settings = SubResource("LabelSettings_cy00t")
+
+[node name="Button" type="Button" parent="MainMenu"]
+offset_left = 32.0
+offset_top = 313.0
+offset_right = 243.0
+offset_bottom = 371.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 36
+theme_override_styles/hover = SubResource("StyleBoxFlat_p6ycu")
+text = "Level Select"
+flat = true
+script = ExtResource("6_82v8k")
+_scenePath = "res://src/Resources/Scenes/ShipController.tscn"
+
+[node name="Quit" type="Button" parent="MainMenu"]
+offset_left = 33.0
+offset_top = 375.0
+offset_right = 244.0
+offset_bottom = 433.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 36
+theme_override_styles/hover = SubResource("StyleBoxFlat_p6ycu")
+text = "Quit"
+flat = true
+script = ExtResource("7_vjupa")
