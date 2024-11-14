@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmw6gju5xwhxm"]
+[gd_scene load_steps=13 format=3 uid="uid://bl32hjkgug2t6"]
 
 [ext_resource type="PackedScene" uid="uid://bmi0mx2hug6os" path="res://src/Resources/Scenes/Prefabs/Planets/Broken_Planet.tscn" id="1_kaps5"]
+[ext_resource type="Sky" uid="uid://boddwq0d0bk4f" path="res://src/Resources/Textures/skybox/Skybox.tres" id="1_vew04"]
 [ext_resource type="Script" path="res://src/UI/PlanetSpin.cs" id="2_wsmxu"]
 [ext_resource type="PackedScene" uid="uid://bu7vntt7fknho" path="res://src/Resources/Scenes/Prefabs/Planets/Ice_Planet2.tscn" id="3_2hmcd"]
 [ext_resource type="PackedScene" uid="uid://2vapvbegk3xt" path="res://src/Resources/Scenes/Prefabs/Planets/Red_Planet_2.tscn" id="4_rup3y"]
@@ -8,16 +9,9 @@
 [ext_resource type="Script" path="res://src/UI/SceneSwitcherButton.cs" id="6_82v8k"]
 [ext_resource type="Script" path="res://src/UI/QuitButton.cs" id="7_vjupa"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6axa6"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_ytit2"]
-sky_material = SubResource("ProceduralSkyMaterial_6axa6")
-
 [sub_resource type="Environment" id="Environment_5ged7"]
 background_mode = 2
-sky = SubResource("Sky_ytit2")
+sky = ExtResource("1_vew04")
 tonemap_mode = 2
 glow_enabled = true
 
