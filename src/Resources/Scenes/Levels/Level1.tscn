@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://od4ac1nosovv"]
+
+[ext_resource type="PackedScene" uid="uid://1kyemv7gh3w0" path="res://src/Resources/Scenes/ShipController.tscn" id="1_ml1cj"]
+[ext_resource type="PackedScene" uid="uid://dxdc3k8t45jx0" path="res://src/Resources/Scenes/Prefabs/Planets/Cream_Violet_Planet.tscn" id="2_f2i7f"]
+[ext_resource type="PackedScene" uid="uid://c1wgiy8ww3gs4" path="res://src/Resources/Scenes/Prefabs/Planets/Earth1.tscn" id="2_gvwti"]
+[ext_resource type="PackedScene" uid="uid://h4oei7xa0i84" path="res://src/Resources/Scenes/Prefabs/Planets/White_Drawf.tscn" id="3_ulfg2"]
+[ext_resource type="PackedScene" uid="uid://cx3d5slbifaty" path="res://src/Resources/Scenes/Prefabs/Planets/Sand_Planet.tscn" id="3_vkh6i"]
+
+[node name="Level1" type="Node3D"]
+
+[node name="ShipController" parent="." instance=ExtResource("1_ml1cj")]
+
+[node name="Planets" type="Node" parent="."]
+
+[node name="Earth1" parent="Planets" instance=ExtResource("2_gvwti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5184, -319.582)
+
+[node name="WhiteDrawf" parent="Planets" instance=ExtResource("3_ulfg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -391.819, 354.583, -1343.91)
+
+[node name="CreamVioletPlanet" parent="Planets" instance=ExtResource("2_f2i7f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -261.833, 5.08408, -1013.61)
+
+[node name="SandPlanet" parent="Planets" instance=ExtResource("3_vkh6i")]
+transform = Transform3D(0.999959, -0.00202795, -0.00882739, 0.00201927, 0.999997, -0.000991647, 0.00882938, 0.00097378, 0.999961, 73.1331, 157.383, -703.57)
