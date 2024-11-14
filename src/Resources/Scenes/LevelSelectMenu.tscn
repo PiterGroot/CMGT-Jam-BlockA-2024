@@ -1,0 +1,106 @@
+[gd_scene load_steps=11 format=3 uid="uid://cmp0qfpnykeim"]
+
+[ext_resource type="Sky" uid="uid://boddwq0d0bk4f" path="res://src/Resources/Textures/skybox/Skybox.tres" id="1_fkj2k"]
+[ext_resource type="Script" path="res://src/UI/SceneSwitcherButton.cs" id="1_ra843"]
+[ext_resource type="Script" path="res://src/UI/PlanetRaycast.cs" id="1_v03um"]
+[ext_resource type="PackedScene" uid="uid://c1wgiy8ww3gs4" path="res://src/Resources/Scenes/Prefabs/Planets/Earth1.tscn" id="1_xvj6b"]
+[ext_resource type="PackedScene" uid="uid://bnail54l2sbwc" path="res://src/Resources/Scenes/Prefabs/Planets/Lava_Planet_2.tscn" id="2_0mjrr"]
+[ext_resource type="Script" path="res://src/UI/PlanetSpin.cs" id="2_k8n2h"]
+[ext_resource type="PackedScene" uid="uid://h37comet2arj" path="res://src/Resources/Scenes/Prefabs/Planets/Ice_Planet.tscn" id="3_ohypa"]
+[ext_resource type="Material" uid="uid://ci0u1rwo078mf" path="res://src/Resources/Materials/Invisible.tres" id="5_pqbbe"]
+
+[sub_resource type="Environment" id="Environment_d51gm"]
+background_mode = 2
+sky = ExtResource("1_fkj2k")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_vae14"]
+font_size = 46
+outline_size = 25
+outline_color = Color(0, 0, 0, 1)
+
+[node name="LevelSelectMenu" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_d51gm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("planets", "levelID")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 271.764)
+script = ExtResource("1_v03um")
+planets = [NodePath("../Planets/Earth1"), NodePath("../Planets/LavaPlanet2"), NodePath("../Planets/IcePlanet")]
+levelID = NodePath("../UI/LevelID")
+scenePaths = PackedStringArray("res://src/Resources/Scenes/Levels/Level1.tscn", "res://src/Resources/Scenes/Levels/Level2.tscn", "res://src/Resources/Scenes/Levels/Level3.tscn")
+
+[node name="UI" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="UI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -148.0
+offset_top = 25.0
+offset_right = 151.0
+offset_bottom = 89.0
+grow_horizontal = 2
+text = "LEVEL SELECT"
+label_settings = SubResource("LabelSettings_vae14")
+
+[node name="LevelID" type="Label" parent="UI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -148.0
+offset_top = -95.0
+offset_right = 151.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_vae14")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="UI"]
+offset_right = 81.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 36
+text = "BACK"
+script = ExtResource("1_ra843")
+_scenePath = "res://src/Resources/Scenes/MainMenu.tscn"
+
+[node name="Planets" type="Node" parent="."]
+
+[node name="Earth1" parent="Planets" instance=ExtResource("1_xvj6b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -300, 0, -360.143)
+script = ExtResource("2_k8n2h")
+spinSpeed = 0.35
+
+[node name="0" type="CSGSphere3D" parent="Planets/Earth1"]
+material_override = ExtResource("5_pqbbe")
+use_collision = true
+radius = 100.0
+
+[node name="LavaPlanet2" parent="Planets" instance=ExtResource("2_0mjrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -360.143)
+script = ExtResource("2_k8n2h")
+spinSpeed = 0.35
+
+[node name="1" type="CSGSphere3D" parent="Planets/LavaPlanet2"]
+material_override = ExtResource("5_pqbbe")
+use_collision = true
+radius = 100.0
+
+[node name="IcePlanet" parent="Planets" instance=ExtResource("3_ohypa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 310, 0, -360.143)
+script = ExtResource("2_k8n2h")
+spinSpeed = 0.35
+
+[node name="2" type="CSGSphere3D" parent="Planets/IcePlanet"]
+material_override = ExtResource("5_pqbbe")
+use_collision = true
+radius = 100.0

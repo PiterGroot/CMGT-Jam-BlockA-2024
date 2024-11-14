@@ -1,17 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://1kyemv7gh3w0"]
+[gd_scene load_steps=4 format=3 uid="uid://1kyemv7gh3w0"]
 
+[ext_resource type="Sky" uid="uid://boddwq0d0bk4f" path="res://src/Resources/Textures/skybox/Skybox.tres" id="1_0g0am"]
 [ext_resource type="PackedScene" uid="uid://bcchkqf1qrvs1" path="res://src/Resources/Models/SpaceShip/space_ship_controller.tscn" id="1_hhw7m"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s7qxk"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_uab6t"]
-sky_material = SubResource("ProceduralSkyMaterial_s7qxk")
 
 [sub_resource type="Environment" id="Environment_qsjw4"]
 background_mode = 2
-sky = SubResource("Sky_uab6t")
+sky = ExtResource("1_0g0am")
 tonemap_mode = 2
 glow_enabled = true
 
