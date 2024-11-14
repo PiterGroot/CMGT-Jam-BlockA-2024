@@ -8,7 +8,7 @@ public partial class SpaceshipController : CharacterBody3D
 	[Export] public float Acceleration = 1f;
 	[Export] public float MaxSpeed = 50f;
 	[Export] public float RotationSmoothing = 5f;
-	[Export] public float CollisionRadius = 10f;
+	[Export] public float CollisionRadius = 100f;
 
 	[Export] private SpaceShipFuel SpaceShipFuel;
 
@@ -112,10 +112,10 @@ public partial class SpaceshipController : CharacterBody3D
 			}
 		}
 	}
-	
+
 	public void OnCollisionWithPlanet()
 	{
-		GD.Print("Player has collided with the planet! Triggering death screen...");
+		GD.Print("Player has collided with the planet!");
 	}
 
 	private void ApplyGravity(double delta)
