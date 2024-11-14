@@ -8,7 +8,8 @@
 [ext_resource type="ArrayMesh" uid="uid://pyjndvhm738q" path="res://src/Resources/Models/ControlPanel/VerticalScreen/model.obj" id="5_rorei"]
 [ext_resource type="Script" path="res://src/SpaceShip/FuelScreen.cs" id="7_gkfb2"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_4snno"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_2rwpm"]
+radius = 3.17569
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_und7c"]
 viewport_path = NodePath("CharacterBody3D/Node3D/VerticalScreen/SubViewport")
@@ -49,7 +50,7 @@ script = ExtResource("2_amv7l")
 moveFuelConsumption = 7.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-shape = SubResource("BoxShape3D_4snno")
+shape = SubResource("SphereShape3D_2rwpm")
 
 [node name="SpaceShip" type="CSGBox3D" parent="CharacterBody3D"]
 

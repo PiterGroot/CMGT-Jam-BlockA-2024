@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://cexml7jxtmbf4"]
+
+[ext_resource type="PackedScene" uid="uid://1kyemv7gh3w0" path="res://src/Resources/Scenes/ShipController.tscn" id="1_n0tf0"]
+[ext_resource type="PackedScene" uid="uid://bu7vntt7fknho" path="res://src/Resources/Scenes/Prefabs/Planets/Ice_Planet2.tscn" id="3_i41g7"]
+[ext_resource type="PackedScene" uid="uid://h37comet2arj" path="res://src/Resources/Scenes/Prefabs/Planets/Ice_Planet.tscn" id="4_0xsog"]
+[ext_resource type="PackedScene" uid="uid://h4oei7xa0i84" path="res://src/Resources/Scenes/Prefabs/Planets/White_Drawf.tscn" id="5_87yvd"]
+[ext_resource type="PackedScene" uid="uid://wvioxq5lvmvx" path="res://src/Resources/Scenes/Prefabs/Planets/Infected_Planet.tscn" id="5_k550c"]
+
+[node name="Level3" type="Node3D"]
+
+[node name="ShipController" parent="." instance=ExtResource("1_n0tf0")]
+
+[node name="Planets" type="Node" parent="."]
+
+[node name="IcePlanet2" parent="Planets" instance=ExtResource("3_i41g7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -305.378, -334.919, -1380.32)
+
+[node name="IcePlanet" parent="Planets" instance=ExtResource("4_0xsog")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -229.335, -129.478, -926.786)
+
+[node name="WhiteDrawf" parent="Planets" instance=ExtResource("5_87yvd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -396.954, 342.884, -1550.82)
+
+[node name="InfectedPlanet" parent="Planets" instance=ExtResource("5_k550c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.20599, -48.7149, -471.382)
