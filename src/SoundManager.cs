@@ -1,0 +1,25 @@
+using Godot;
+using System;
+
+public partial class SoundManager : Node
+{
+	public static SoundManager Instance { get; private set; }
+
+	public AudioStreamPlayer player;
+
+	public AudioStream button = GD.Load<AudioStream>("res://src/button.wav");
+
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+		Instance = this;
+
+		player = new AudioStreamPlayer();
+		AudioStream audioStream = button;
+
+		player.Stream = audioStream;
+		player.VolumeDb = -15;
+
+		AddChild(player);
+	}
+}

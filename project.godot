@@ -15,6 +15,10 @@ run/main_scene="res://src/Resources/Scenes/Scene.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://src/Resources/Textures/icon.svg"
 
+[autoload]
+
+SoundManager="*res://src/SoundManager.cs"
+
 [dotnet]
 
 project/assembly_name="CMGT-Jam-BlockA-2024"
