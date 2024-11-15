@@ -16,7 +16,7 @@ public partial class SpaceshipController : CharacterBody3D
 	private Vector3 _velocity = Vector3.Zero;
 	private Vector3 _rotationVelocity = Vector3.Zero;
 
-	private PlanetData _nearestPlanet = null; 
+	private PlanetData _nearestPlanet = null;
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -38,11 +38,23 @@ public partial class SpaceshipController : CharacterBody3D
 	{
 		if (Input.IsActionPressed("move_forward") && SpaceShipFuel.CurrentFuel > 0)
 		{
+			if (Engine.GetFramesDrawn() % 5 == 0)
+			{
+				SoundManager.Instance.player.Stream = SoundManager.Instance.thruster;
+				SoundManager.Instance.player.Play();
+			}
+
 			_currentSpeed = Mathf.Min(_currentSpeed + (float)(Acceleration * delta), MaxSpeed);
 			EventBus.Publish("move_forward");
 		}
 		else if (Input.IsActionPressed("move_backward") && SpaceShipFuel.CurrentFuel > 0)
 		{
+			if (Engine.GetFramesDrawn() % 5 == 0)
+			{
+				SoundManager.Instance.player.Stream = SoundManager.Instance.back;
+				SoundManager.Instance.player.Play();
+			}
+			
 			_currentSpeed = Mathf.Max(_currentSpeed - (float)(Acceleration * delta), -MaxSpeed);
 			EventBus.Publish("move_backward");
 		}
@@ -130,6 +142,7 @@ public partial class SpaceshipController : CharacterBody3D
 
 			// Apply gravitational pull to the spaceship's velocity
 			_velocity += gravitationalPull;
+
 		}
 	}
 }

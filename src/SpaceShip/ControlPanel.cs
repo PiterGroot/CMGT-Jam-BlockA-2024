@@ -25,4 +25,12 @@ public partial class ControlPanel : Node3D
 		leftLever.RotateX((float)(-1 * GetProcessDeltaTime()));
 		leftLever.Rotation = new Vector3(Mathf.Clamp(leftLever.Rotation.X, 0, 3), leftLever.Rotation.Y, leftLever.Rotation.Z);
 	}
+
+	protected override void Dispose(bool disposing)
+	{
+		EventBus.Unsubscribe("move_forward", OnPitchUp);
+		EventBus.Unsubscribe("move_backward", OnPitchDown);
+
+		base.Dispose(disposing);
+	}
 }

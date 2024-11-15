@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bge1qbb1wpe61" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Red_2.tscn" id="9_5v8l8"]
 [ext_resource type="PackedScene" uid="uid://bmnwdn05ngbeh" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Blue_1.tscn" id="10_hwxbu"]
 [ext_resource type="PackedScene" uid="uid://daislbplhb3c3" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Blue_2.tscn" id="11_hv34v"]
+[ext_resource type="PackedScene" uid="uid://51pujn1bi7i7" path="res://src/Resources/Scenes/Prefabs/music.tscn" id="12_1hc7g"]
 
 [node name="Level1" type="Node3D"]
 
@@ -220,3 +221,5 @@ transform = Transform3D(-0.705917, -3.35314, 0.664009, -2.85528, 0.656538, -0.85
 
 [node name="AstroidBlue10" parent="Obstacles/BlueAstroids" instance=ExtResource("11_hv34v")]
 transform = Transform3D(-0.185481, -6.10349, -4.87584, -3.48177, 4.24769, -5.13514, 5.68158, 2.4038, -3.30608, 12.4043, 55.1065, -1338.57)
+
+[node name="Music" parent="." instance=ExtResource("12_1hc7g")]

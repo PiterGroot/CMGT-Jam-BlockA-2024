@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://51pujn1bi7i7"]
+
+[ext_resource type="AudioStream" uid="uid://0k3ved82y0ku" path="res://src/Resources/Music.mp3" id="1_bk0qu"]
+
+[node name="Music" type="Node"]
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_bk0qu")
+volume_db = -49.899
+autoplay = true
+parameters/looping = true

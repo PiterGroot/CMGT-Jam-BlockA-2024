@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmp0qfpnykeim"]
+[gd_scene load_steps=12 format=3 uid="uid://b23nrffgc8sms"]
 
 [ext_resource type="Sky" uid="uid://boddwq0d0bk4f" path="res://src/Resources/Textures/skybox/Skybox.tres" id="1_fkj2k"]
 [ext_resource type="Script" path="res://src/UI/SceneSwitcherButton.cs" id="1_ra843"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://src/UI/PlanetSpin.cs" id="2_k8n2h"]
 [ext_resource type="PackedScene" uid="uid://h37comet2arj" path="res://src/Resources/Scenes/Prefabs/Planets/Ice_Planet.tscn" id="3_ohypa"]
 [ext_resource type="Material" uid="uid://ci0u1rwo078mf" path="res://src/Resources/Materials/Invisible.tres" id="5_pqbbe"]
+[ext_resource type="PackedScene" uid="uid://51pujn1bi7i7" path="res://src/Resources/Scenes/Prefabs/music.tscn" id="9_gj2am"]
 
 [sub_resource type="Environment" id="Environment_d51gm"]
 background_mode = 2
@@ -107,3 +108,5 @@ renderGravityField = false
 material_override = ExtResource("5_pqbbe")
 use_collision = true
 radius = 100.0
+
+[node name="Music" parent="." instance=ExtResource("9_gj2am")]

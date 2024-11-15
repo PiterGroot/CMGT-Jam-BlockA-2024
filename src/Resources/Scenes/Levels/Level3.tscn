@@ -7,13 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://wvioxq5lvmvx" path="res://src/Resources/Scenes/Prefabs/Planets/Infected_Planet.tscn" id="5_k550c"]
 [ext_resource type="PackedScene" uid="uid://bmnwdn05ngbeh" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Blue_1.tscn" id="6_3tscj"]
 [ext_resource type="PackedScene" uid="uid://daislbplhb3c3" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Blue_2.tscn" id="7_t7647"]
-[ext_resource type="PackedScene" uid="uid://chb6368qgpggd" path="res://src/Resources/Scenes/Prefabs/WinCondition.tscn" id="8_100cg"]
+[ext_resource type="PackedScene" uid="uid://51pujn1bi7i7" path="res://src/Resources/Scenes/Prefabs/music.tscn" id="8_1onlx"]
 
 [node name="Level3" type="Node3D"]
-
-[node name="WinCondition" parent="." instance=ExtResource("8_100cg")]
-transform = Transform3D(0.395805, 0, -5.51637, 0, 5.53055, 0, 5.51637, 0, 0.395805, -396.907, 380.912, -1560.92)
-NextScenePath = "res://src/Resources/Scenes/MainMenu.tscn"
 
 [node name="ShipController" parent="." instance=ExtResource("1_n0tf0")]
 
@@ -86,3 +82,5 @@ transform = Transform3D(0.28055, 3.22039, 1.37485, -2.36536, -0.603659, 2.07736,
 
 [node name="AstroidBlue20" parent="Blue_Astroids" instance=ExtResource("7_t7647")]
 transform = Transform3D(0.623396, 7.15588, 3.05498, -5.96714, 1.94762, -2.88853, -2.90555, -2.46451, 6.58764, -131.991, -60.5624, -378.973)
+
+[node name="Music" parent="." instance=ExtResource("8_1onlx")]
