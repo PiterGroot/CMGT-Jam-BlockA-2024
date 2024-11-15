@@ -1,11 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://bge1qbb1wpe61"]
+[gd_scene load_steps=4 format=3 uid="uid://bge1qbb1wpe61"]
 
 [ext_resource type="PackedScene" uid="uid://bqud705o16mq8" path="res://src/Resources/Models/Planets/Broken_Planet/Broken_Planet_Rings_02_Asteroid.fbx" id="1_hchxr"]
-[ext_resource type="PackedScene" uid="uid://bi4lkbcqqe1hr" path="res://src/Resources/Scenes/planet.tscn" id="2_qtkpn"]
+[ext_resource type="Script" path="res://src/Resources/Scenes/PlanetData.cs" id="2_svpk6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0trdl"]
 
 [node name="AstroidRed2" type="Node3D"]
 
 [node name="Broken_Planet_Rings_02_Asteroid" parent="." instance=ExtResource("1_hchxr")]
 
-[node name="Planet" parent="." instance=ExtResource("2_qtkpn")]
-transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, 0, 0, 0)
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Broken_Planet_Rings_02_Asteroid" groups=["planets"]]
+visible = false
+use_collision = true
+radius = 4.0
+radial_segments = 10
+rings = 10
+script = ExtResource("2_svpk6")
+GravityStrength = 500.0
+GravityRadius = 500.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Broken_Planet_Rings_02_Asteroid/CSGSphere3D" groups=["planets"]]
+shape = SubResource("SphereShape3D_0trdl")
