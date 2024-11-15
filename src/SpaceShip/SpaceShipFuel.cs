@@ -16,5 +16,19 @@ public partial class SpaceShipFuel : Node
 	{
 		CurrentFuel = (float)Mathf.Clamp(CurrentFuel - GetProcessDeltaTime() * moveFuelConsumption, 0, maxFuel);
 		EventBus.Publish("fuel_update", CurrentFuel);
+
+		if(CurrentFuel == 0)
+		{
+			SoundManager.Instance.player.Stream = SoundManager.Instance.death;
+			SoundManager.Instance.player.Play();
+
+
+			var newScene = (PackedScene)GD.Load("res://src/Resources/Scenes/LevelSelectMenu.tscn");
+			if (newScene != null)
+			{
+				GetTree().ChangeSceneToPacked(newScene);
+			}
+
+		}
 	}
 }
