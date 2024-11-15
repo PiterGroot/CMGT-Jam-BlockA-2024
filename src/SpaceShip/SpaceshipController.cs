@@ -31,6 +31,7 @@ public partial class SpaceshipController : CharacterBody3D
 
 		if (Mathf.Abs(_currentSpeed) > 1f) SpaceShipFuel.OnMove();
 		MoveAndSlide();
+		CheckTrophyCollision();
 	}
 
 	private void HandleMovement(double delta)
@@ -96,6 +97,28 @@ public partial class SpaceshipController : CharacterBody3D
 				}
 			}
 		}
+	}
+	
+	private void CheckTrophyCollision()
+	{
+	foreach (Node node in GetTree().GetNodesInGroup("WinCondition"))
+	{
+		if (node is Node3D trophy)
+		{
+			float distance = GlobalPosition.DistanceTo(trophy.GlobalPosition);
+
+
+			if (distance <= 50.0f)
+			{
+				OnCollisionWithTrophy(trophy);
+			}
+		}
+	}
+	}
+
+	private void OnCollisionWithTrophy(Node trophy)
+	{
+		GD.Print($"Player collided with trophy: {trophy.Name}");
 	}
 	
 	private void ApplyGravity(double delta)

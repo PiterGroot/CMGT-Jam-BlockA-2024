@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://chb6368qgpggd"]
+
+[ext_resource type="PackedScene" uid="uid://cb1xdb6lu1nk" path="res://src/Resources/Models/WinnerCup.fbx" id="1_i65xa"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ljtah"]
+
+[node name="WinCondition" type="Node3D" groups=["WinCondition"]]
+
+[node name="WinnerCup" parent="." instance=ExtResource("1_i65xa")]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 0
+radius = 2.77196
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGSphere3D"]
+shape = SubResource("SphereShape3D_ljtah")
