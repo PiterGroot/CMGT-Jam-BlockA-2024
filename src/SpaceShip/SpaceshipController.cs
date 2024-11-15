@@ -31,6 +31,7 @@ public partial class SpaceshipController : CharacterBody3D
 
 		if (Mathf.Abs(_currentSpeed) > 1f) SpaceShipFuel.OnMove();
 		MoveAndSlide();
+		CheckTrophyCollision();
 	}
 
 	private void HandleMovement(double delta)
@@ -110,6 +111,26 @@ public partial class SpaceshipController : CharacterBody3D
 		}
 	}
 	
+	private void CheckTrophyCollision()
+{
+	foreach (Node node in GetTree().GetNodesInGroup("WinCondition"))
+	{
+		if (node is Node3D trophy)
+		{
+			float distance = GlobalPosition.DistanceTo(trophy.GlobalPosition);
+
+			if (distance <= 20.0f)
+			{
+				var newScene = (PackedScene)GD.Load("res://src/Resources/Scenes/LevelSelectMenu.tscn");
+				if (newScene != null)
+				{
+					GetTree().ChangeSceneToPacked(newScene);
+				}
+			}
+		}
+	}
+}
+
 	private void ApplyGravity(double delta)
 	{
 		UpdateNearestPlanet();  // Find the nearest planet within range
