@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckx52k0lpqhky"]
+
+[ext_resource type="Shader" path="res://src/Resources/Materials/Gravity.gdshader" id="1_lobcu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xcg32"]
+render_priority = 0
+shader = ExtResource("1_lobcu")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/emission_color = Color(1, 0, 0, 1)
+shader_parameter/emission_amount = 16.0
+shader_parameter/rim_steepness = 6.592
+shader_parameter/uv_scale = null
+shader_parameter/uv_offset = null
+
+[node name="GravitySphere" type="CSGSphere3D"]
+transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, -0.0509644, 6.09876, -5.59508)
+material_override = SubResource("ShaderMaterial_xcg32")
+transparency = 0.43
+rings = 15

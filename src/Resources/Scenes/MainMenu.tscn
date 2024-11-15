@@ -45,20 +45,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 718.285)
 transform = Transform3D(0.935684, 0.352838, 0, -0.347211, 0.920763, -0.177875, -0.062761, 0.166435, 0.984053, 0.32988, -160.397, -5.8489)
 script = ExtResource("2_wsmxu")
 spinSpeed = 0.05
+renderGravityField = false
 
 [node name="IcePlanet2" parent="." instance=ExtResource("3_2hmcd")]
 transform = Transform3D(1, 0, 0, 0, 0.679467, -0.733706, 0, 0.733706, 0.679467, 288.698, 140.993, 374.719)
 script = ExtResource("2_wsmxu")
 spinSpeed = 0.035
+renderGravityField = false
 
 [node name="RedPlanet2" parent="." instance=ExtResource("4_rup3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -781.897, 148.359, -741.483)
 script = ExtResource("2_wsmxu")
 spinSpeed = 1.0
+renderGravityField = false
 
 [node name="WhiteDrawf" parent="." instance=ExtResource("5_ck62y")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.603394, 590.22, -983.453)
 script = ExtResource("2_wsmxu")
+renderGravityField = false
 
 [node name="MainMenu" type="Node" parent="."]
 
