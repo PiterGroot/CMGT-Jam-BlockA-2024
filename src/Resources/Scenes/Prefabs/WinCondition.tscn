@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://chb6368qgpggd"]
+[gd_scene load_steps=4 format=3 uid="uid://chb6368qgpggd"]
 
+[ext_resource type="Script" path="res://src/Resources/WinCondition.cs" id="1_1dtax"]
 [ext_resource type="PackedScene" uid="uid://cb1xdb6lu1nk" path="res://src/Resources/Models/WinnerCup.fbx" id="1_i65xa"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ljtah"]
 
 [node name="WinCondition" type="Node3D" groups=["WinCondition"]]
+physics_interpolation_mode = 2
+script = ExtResource("1_1dtax")
 
 [node name="WinnerCup" parent="." instance=ExtResource("1_i65xa")]
 

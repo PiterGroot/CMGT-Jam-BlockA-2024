@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cge0cpytyiyuo"]
+[gd_scene load_steps=11 format=3 uid="uid://cge0cpytyiyuo"]
 
 [ext_resource type="PackedScene" uid="uid://1kyemv7gh3w0" path="res://src/Resources/Scenes/ShipController.tscn" id="1_0a4ub"]
 [ext_resource type="PackedScene" uid="uid://dyqps5ekgrm7s" path="res://src/Resources/Scenes/Prefabs/Planets/Lava_Planet_1.tscn" id="2_hjlh6"]
@@ -9,8 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://b5j4b2ikps0dj" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Orange_1.tscn" id="7_sbue0"]
 [ext_resource type="PackedScene" uid="uid://do8b172f1f2rf" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Orange_2.tscn" id="8_q0kqp"]
 [ext_resource type="PackedScene" uid="uid://bge1qbb1wpe61" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Red_2.tscn" id="9_iviwh"]
+[ext_resource type="PackedScene" uid="uid://chb6368qgpggd" path="res://src/Resources/Scenes/Prefabs/WinCondition.tscn" id="10_bxq3x"]
 
 [node name="Level2" type="Node3D"]
+
+[node name="WinCondition" parent="." instance=ExtResource("10_bxq3x")]
+transform = Transform3D(0.303615, 0, -5.52221, 0, 5.53055, 0, 5.52221, 0, 0.303615, 126.708, 1481.94, -1120.5)
+NextScenePath = "res://src/Resources/Scenes/Levels/Level3.tscn"
 
 [node name="ShipController" parent="." instance=ExtResource("1_0a4ub")]
 
