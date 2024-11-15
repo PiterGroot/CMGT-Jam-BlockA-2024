@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://daislbplhb3c3"]
+
+[ext_resource type="PackedScene" uid="uid://bi4lkbcqqe1hr" path="res://src/Resources/Scenes/planet.tscn" id="1_8vuh2"]
+[ext_resource type="PackedScene" uid="uid://o7squi4p8c8y" path="res://src/Resources/Models/Planets/Pink-Blue_Planet/Pink-Blue_Planet_Asteroid.fbx" id="2_gu8oq"]
+
+[node name="AstroidBlue2" type="Node3D"]
+
+[node name="Planet" parent="." instance=ExtResource("1_8vuh2")]
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
+
+[node name="Pink-Blue_Planet_Asteroid" parent="." instance=ExtResource("2_gu8oq")]

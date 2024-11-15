@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmnwdn05ngbeh"]
+
+[ext_resource type="PackedScene" uid="uid://deucm52i7dqnt" path="res://src/Resources/Models/Planets/Broken_Planet/Broken_Planet_Rings_03_Asteroid.fbx" id="1_ye1fk"]
+[ext_resource type="PackedScene" uid="uid://bi4lkbcqqe1hr" path="res://src/Resources/Scenes/planet.tscn" id="2_j30v4"]
+
+[node name="AstroidBlue1" type="Node3D"]
+
+[node name="Broken_Planet_Rings_03_Asteroid" parent="." instance=ExtResource("1_ye1fk")]
+
+[node name="Planet" parent="." instance=ExtResource("2_j30v4")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)

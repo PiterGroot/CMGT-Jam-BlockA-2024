@@ -31,7 +31,6 @@ public partial class SpaceshipController : CharacterBody3D
 
 		if (Mathf.Abs(_currentSpeed) > 1f) SpaceShipFuel.OnMove();
 		MoveAndSlide();
-		DetectPlanetCollision();
 	}
 
 	private void HandleMovement(double delta)
@@ -99,25 +98,6 @@ public partial class SpaceshipController : CharacterBody3D
 		}
 	}
 	
-	private void DetectPlanetCollision()
-	{
-		if (_nearestPlanet != null)
-		{
-			// Get the distance to the planet
-			float distanceToPlanet = GlobalPosition.DistanceTo(_nearestPlanet.GlobalPosition);
-
-			if (distanceToPlanet <= CollisionRadius)
-			{
-				OnCollisionWithPlanet();
-			}
-		}
-	}
-
-	public void OnCollisionWithPlanet()
-	{
-		GD.Print("Player has collided with the planet!");
-	}
-
 	private void ApplyGravity(double delta)
 	{
 		UpdateNearestPlanet();  // Find the nearest planet within range
