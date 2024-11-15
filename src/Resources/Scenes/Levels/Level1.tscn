@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://od4ac1nosovv"]
+[gd_scene load_steps=14 format=3 uid="uid://od4ac1nosovv"]
 
 [ext_resource type="PackedScene" uid="uid://chb6368qgpggd" path="res://src/Resources/Scenes/Prefabs/WinCondition.tscn" id="1_m7ijh"]
 [ext_resource type="PackedScene" uid="uid://1kyemv7gh3w0" path="res://src/Resources/Scenes/ShipController.tscn" id="1_ml1cj"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bge1qbb1wpe61" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Red_2.tscn" id="9_5v8l8"]
 [ext_resource type="PackedScene" uid="uid://bmnwdn05ngbeh" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Blue_1.tscn" id="10_hwxbu"]
 [ext_resource type="PackedScene" uid="uid://daislbplhb3c3" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Blue_2.tscn" id="11_hv34v"]
-[ext_resource type="PackedScene" uid="uid://51pujn1bi7i7" path="res://src/Resources/Scenes/Prefabs/music.tscn" id="12_1hc7g"]
+[ext_resource type="PackedScene" path="res://src/Resources/Scenes/Prefabs/music.tscn" id="12_1hc7g"]
 
 [node name="Level1" type="Node3D"]
 

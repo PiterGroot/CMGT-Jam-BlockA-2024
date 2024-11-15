@@ -16,9 +16,9 @@ public partial class SceneSwitcherButton : Button
 
 		if (newScene != null)
 		{
-            SoundManager.Instance.player.Stream = SoundManager.Instance.button;
-            SoundManager.Instance.player.Play();
-            GetTree().ChangeSceneToPacked(newScene);
+			SoundManager.Instance.player.Stream = SoundManager.Instance.button;
+			SoundManager.Instance.player.Play();
+			GetTree().ChangeSceneToPacked(newScene);
 		}
 		else
 		{
