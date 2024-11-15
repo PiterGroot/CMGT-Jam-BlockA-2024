@@ -26,7 +26,7 @@ outline_color = Color(0, 0, 0, 1)
 environment = SubResource("Environment_d51gm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(-1.60214, -0.80108, 0.462501, 0, 0.924997, 1.60215, -0.925006, 1.3875, -0.801069, 0, 0, 0)
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("planets", "levelID")]
@@ -79,6 +79,7 @@ _scenePath = "res://src/Resources/Scenes/MainMenu.tscn"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -300, 0, -360.143)
 script = ExtResource("2_k8n2h")
 spinSpeed = 0.35
+renderGravityField = false
 
 [node name="0" type="CSGSphere3D" parent="Planets/Earth1"]
 material_override = ExtResource("5_pqbbe")
@@ -89,6 +90,7 @@ radius = 100.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -360.143)
 script = ExtResource("2_k8n2h")
 spinSpeed = 0.35
+renderGravityField = false
 
 [node name="1" type="CSGSphere3D" parent="Planets/LavaPlanet2"]
 material_override = ExtResource("5_pqbbe")
@@ -99,6 +101,7 @@ radius = 100.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 310, 0, -360.143)
 script = ExtResource("2_k8n2h")
 spinSpeed = 0.35
+renderGravityField = false
 
 [node name="2" type="CSGSphere3D" parent="Planets/IcePlanet"]
 material_override = ExtResource("5_pqbbe")
