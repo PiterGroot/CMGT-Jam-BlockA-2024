@@ -13,6 +13,16 @@ public partial class FuelScreen : MeshInstance3D
 
 	private void OnFuelUpdated(object eventData)
 	{
-		progressBar.Value = (float)eventData;
+		if (IsInstanceValid(progressBar))
+		{
+			// Safe to manipulate the ProgressBar
+			progressBar.Value = (float)eventData;
+		}
+	}
+
+	protected override void Dispose(bool disposing)
+	{
+		EventBus.Unsubscribe("fuel_update", OnFuelUpdated);
+		base.Dispose(disposing);
 	}
 }

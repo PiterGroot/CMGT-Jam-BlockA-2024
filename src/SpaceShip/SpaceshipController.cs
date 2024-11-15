@@ -16,7 +16,7 @@ public partial class SpaceshipController : CharacterBody3D
 	private Vector3 _velocity = Vector3.Zero;
 	private Vector3 _rotationVelocity = Vector3.Zero;
 
-	private PlanetData _nearestPlanet = null; 
+	private PlanetData _nearestPlanet = null;
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -121,6 +121,7 @@ public partial class SpaceshipController : CharacterBody3D
 
 			// Apply gravitational pull to the spaceship's velocity
 			_velocity += gravitationalPull;
+
 		}
 	}
 }
