@@ -47,7 +47,7 @@ public partial class SpaceshipController : CharacterBody3D
 			EventBus.Publish("move_backward");
 		}
 		else
-			_currentSpeed = Mathf.Lerp(_currentSpeed, 0, (float)(delta * 2));
+			_currentSpeed = Mathf.Lerp(_currentSpeed, 0, (float)(delta * .5f));
 
 			_currentSpeed = Mathf.Clamp(_currentSpeed, -MaxSpeed, MaxSpeed);
 	}
