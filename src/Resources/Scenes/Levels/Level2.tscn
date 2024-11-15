@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://cge0cpytyiyuo"]
+[gd_scene load_steps=10 format=3 uid="uid://cge0cpytyiyuo"]
 
 [ext_resource type="PackedScene" uid="uid://1kyemv7gh3w0" path="res://src/Resources/Scenes/ShipController.tscn" id="1_0a4ub"]
 [ext_resource type="PackedScene" uid="uid://dyqps5ekgrm7s" path="res://src/Resources/Scenes/Prefabs/Planets/Lava_Planet_1.tscn" id="2_hjlh6"]
 [ext_resource type="PackedScene" uid="uid://bnail54l2sbwc" path="res://src/Resources/Scenes/Prefabs/Planets/Lava_Planet_2.tscn" id="3_6pm40"]
 [ext_resource type="PackedScene" uid="uid://cts1mtufhlt64" path="res://src/Resources/Scenes/Prefabs/Planets/Lava_Planet_3.tscn" id="4_t5hwa"]
 [ext_resource type="PackedScene" uid="uid://d264pboc84k8t" path="res://src/Resources/Scenes/Prefabs/Planets/Red_Giant.tscn" id="5_mi1b1"]
+[ext_resource type="PackedScene" uid="uid://dru84vgmec04f" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Red_1.tscn" id="6_cpmdi"]
+[ext_resource type="PackedScene" uid="uid://b5j4b2ikps0dj" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Orange_1.tscn" id="7_sbue0"]
+[ext_resource type="PackedScene" uid="uid://do8b172f1f2rf" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Orange_2.tscn" id="8_q0kqp"]
+[ext_resource type="PackedScene" uid="uid://bge1qbb1wpe61" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Red_2.tscn" id="9_iviwh"]
 
 [node name="Level2" type="Node3D"]
 
@@ -23,3 +27,160 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 229.511, 720.484, -871.491)
 
 [node name="RedGiant" parent="Planets" instance=ExtResource("5_mi1b1")]
 transform = Transform3D(1, 0, 0, 0, 0.997975, 0.0636092, 0, -0.0636092, 0.997975, 122.629, 1286.89, -1117.32)
+
+[node name="Obstacles" type="Node" parent="."]
+
+[node name="Astroid_Red_1" parent="Obstacles" instance=ExtResource("6_cpmdi")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 23.7285, 0, -317.673)
+
+[node name="RedAstroids" type="Node" parent="."]
+
+[node name="AstroidOrange1" parent="RedAstroids" instance=ExtResource("7_sbue0")]
+transform = Transform3D(1.61522, 0, 0, 0, 1.61522, 0, 0, 0, 1.61522, 331.256, 333.151, -736.158)
+
+[node name="AstroidOrange2" parent="RedAstroids" instance=ExtResource("8_q0kqp")]
+transform = Transform3D(1.61522, 0, 0, 0, 1.61522, 0, 0, 0, 1.61522, 336.379, 345.927, -755.321)
+
+[node name="Astroid_Red_1" parent="RedAstroids" instance=ExtResource("6_cpmdi")]
+transform = Transform3D(1.13049, 0, -1.15366, 0, 1.61522, 0, 1.15366, 0, 1.13049, 228.844, 347.018, -677.145)
+
+[node name="AstroidRed2" parent="RedAstroids" instance=ExtResource("9_iviwh")]
+transform = Transform3D(1.53772, 0, -0.494329, 0, 1.61522, 0, 0.494329, 0, 1.53772, 266.851, 333.151, -676.817)
+
+[node name="AstroidOrange3" parent="RedAstroids" instance=ExtResource("7_sbue0")]
+transform = Transform3D(2.60893, 0, 0, 0, 2.60893, 0, 0, 0, 2.60893, 330.901, 270.06, -664.031)
+
+[node name="AstroidOrange4" parent="RedAstroids" instance=ExtResource("8_q0kqp")]
+transform = Transform3D(2.60893, 0, 0, 0, 2.60893, 0, 0, 0, 2.60893, 443.273, 394.899, -694.649)
+
+[node name="Astroid_Red_2" parent="RedAstroids" instance=ExtResource("6_cpmdi")]
+transform = Transform3D(-0.0529077, 0, -2.6084, 0, 2.60893, 0, 2.6084, 0, -0.0529077, -46.5929, 299.671, -662.064)
+
+[node name="AstroidOrange5" parent="RedAstroids" instance=ExtResource("7_sbue0")]
+transform = Transform3D(-1.12457, 1.15065, -0.142385, 1.14154, 1.13355, 0.144534, 0.202888, 0, -1.60243, -113.235, 534.615, -978.548)
+
+[node name="AstroidOrange6" parent="RedAstroids" instance=ExtResource("8_q0kqp")]
+transform = Transform3D(-1.12457, 1.15065, -0.142385, 1.14154, 1.13355, 0.144534, 0.202888, 0, -1.60243, -106.011, 545.487, -958.893)
+
+[node name="Astroid_Red_3" parent="RedAstroids" instance=ExtResource("6_cpmdi")]
+transform = Transform3D(-0.888785, 1.15065, 0.703559, 0.902195, 1.13355, -0.714174, -1.00252, 0, -1.26645, -37.256, 477.249, -1049.96)
+
+[node name="AstroidRed3" parent="RedAstroids" instance=ExtResource("9_iviwh")]
+transform = Transform3D(-1.11419, 1.15065, 0.208615, 1.131, 1.13355, -0.211763, -0.29726, 0, -1.58763, -73.6249, 494.407, -1045.51)
+
+[node name="AstroidOrange7" parent="RedAstroids" instance=ExtResource("7_sbue0")]
+transform = Transform3D(-1.81643, 1.85856, -0.229983, 1.84384, 1.83093, 0.233453, 0.327709, 0, -2.58827, -164.29, 496.541, -1050.15)
+
+[node name="AstroidOrange8" parent="RedAstroids" instance=ExtResource("8_q0kqp")]
+transform = Transform3D(-3.48117, 3.56191, -0.440761, 3.5337, 3.50896, 0.447412, 0.628051, 3.72529e-07, -4.9604, -289.989, 770.615, -1163.41)
+
+[node name="AstroidOrange9" parent="RedAstroids" instance=ExtResource("7_sbue0")]
+transform = Transform3D(2.0476, -1.59583, 0.259252, -1.58319, -2.06394, -0.200453, 0.327709, -2.05826e-10, -2.58827, 353.745, 242.35, -1053.4)
+
+[node name="AstroidOrange10" parent="RedAstroids" instance=ExtResource("7_sbue0")]
+transform = Transform3D(2.04538, -1.93619, -1.44999, -2.31515, -2.11721, -0.438646, -0.701007, 1.34294, -2.78208, 225.59, 129.176, -1140.53)
+
+[node name="AstroidOrange11" parent="RedAstroids" instance=ExtResource("7_sbue0")]
+transform = Transform3D(2.04538, -1.93619, -1.44999, -2.31515, -2.11721, -0.438646, -0.701007, 1.34294, -2.78208, 87.8016, 120.685, -1139.67)
+
+[node name="AstroidOrange12" parent="RedAstroids" instance=ExtResource("7_sbue0")]
+transform = Transform3D(1.72403, -1.61061, 2.967, -2.30033, -2.99885, -0.291251, 2.47096, -1.66801, -2.34127, 506.921, 166.848, -849.85)
+
+[node name="AstroidOrange13" parent="RedAstroids" instance=ExtResource("8_q0kqp")]
+transform = Transform3D(3.9242, -3.05839, 0.496854, -3.03417, -3.95553, -0.384166, 0.62805, 3.45991e-07, -4.9604, 499.807, 64.1372, -1166.66)
+
+[node name="Astroid_Red_4" parent="RedAstroids" instance=ExtResource("6_cpmdi")]
+transform = Transform3D(-0.370075, 3.56191, 3.48939, 0.375658, 3.50896, -3.54204, -4.97211, 0, -0.527328, 265.327, 147.784, -1319.97)
+
+[node name="Astroid_Red_5" parent="RedAstroids" instance=ExtResource("6_cpmdi")]
+transform = Transform3D(6.97314, 0.0853941, -7.16715, 0.880681, 9.91332, 0.974954, 7.11335, -1.31105, 6.90517, 486.452, 851.508, -967.113)
+
+[node name="AstroidRed4" parent="RedAstroids" instance=ExtResource("9_iviwh")]
+transform = Transform3D(9.50881, 0.085395, -3.09439, 0.325216, 9.91332, 1.27294, 3.07844, -1.31105, 9.42361, -204.887, 520.27, -1188.01)
+
+[node name="AstroidRed6" parent="RedAstroids" instance=ExtResource("9_iviwh")]
+transform = Transform3D(-7.39376, 5.9039, 3.23671, -5.98795, -7.96399, 0.848122, 3.07844, -1.31105, 9.42361, -232.609, 57.8893, -703.864)
+
+[node name="AstroidRed5" parent="RedAstroids" instance=ExtResource("9_iviwh")]
+transform = Transform3D(-4.34373, 0.459939, -2.47214, 0.163228, 4.97555, 0.638895, 2.50925, 0.472531, -4.32103, -444.736, 366.993, -980.023)
+
+[node name="AstroidRed7" parent="RedAstroids" instance=ExtResource("9_iviwh")]
+transform = Transform3D(-2.84167, -0.435066, 4.11419, 0.163228, 4.97555, 0.638895, -4.13391, 0.495527, -2.80289, 277.734, 437.846, -1424.2)
+
+[node name="AstroidOrange14" parent="RedAstroids" instance=ExtResource("7_sbue0")]
+transform = Transform3D(5.37767, 0.287043, 4.1626, 0.103243, 6.77918, -0.600855, -4.17121, 0.537859, 5.3517, 839.619, 306.561, -789.372)
+
+[node name="AstroidOrange15" parent="RedAstroids" instance=ExtResource("7_sbue0")]
+transform = Transform3D(-1.34678, 0, 0.96135, 0, 1.61522, 0, -0.891688, 0, -1.452, 189.27, 868.082, -1085.58)
+
+[node name="AstroidOrange16" parent="RedAstroids" instance=ExtResource("8_q0kqp")]
+transform = Transform3D(-1.34678, 0, 0.96135, 0, 1.61522, 0, -0.891688, 0, -1.452, 194.393, 880.858, -1104.74)
+
+[node name="Astroid_Red_6" parent="RedAstroids" instance=ExtResource("6_cpmdi")]
+transform = Transform3D(-0.30573, 0, 1.70993, 0, 1.61522, 0, -1.58602, 0, -0.329615, 143.765, 881.949, -1064.52)
+
+[node name="AstroidRed8" parent="RedAstroids" instance=ExtResource("9_iviwh")]
+transform = Transform3D(-1.00927, 0, 1.3596, 0, 1.61522, 0, -1.26108, 0, -1.08812, 143.314, 868.082, -1046.43)
+
+[node name="AstroidOrange17" parent="RedAstroids" instance=ExtResource("7_sbue0")]
+transform = Transform3D(-2.17535, 0, 1.55279, 0, 2.60893, 0, -1.44027, 0, -2.3453, 143.623, 768.672, -1043.44)
+
+[node name="AstroidOrange18" parent="RedAstroids" instance=ExtResource("8_q0kqp")]
+transform = Transform3D(-2.17535, 0, 1.55279, 0, 2.60893, 0, -1.44027, 0, -2.3453, 255.996, 893.511, -1074.06)
+
+[node name="Astroid_Red_7" parent="RedAstroids" instance=ExtResource("6_cpmdi")]
+transform = Transform3D(1.48409, 0, 2.31333, 0, 2.60893, 0, -2.1457, 0, 1.60003, -33.8368, 798.283, -1080.03)
+
+[node name="AstroidOrange19" parent="RedAstroids" instance=ExtResource("7_sbue0")]
+transform = Transform3D(1.01629, 1.15065, -0.541329, -1.03161, 1.13355, 0.549496, 0.715455, 2.98023e-08, 1.56126, -168.105, 1030.76, -1240.12)
+
+[node name="AstroidOrange20" parent="RedAstroids" instance=ExtResource("8_q0kqp")]
+transform = Transform3D(1.01629, 1.15065, -0.541329, -1.03161, 1.13355, 0.549496, 0.715455, 2.98023e-08, 1.56126, -160.881, 1041.63, -1220.46)
+
+[node name="Astroid_Red_8" parent="RedAstroids" instance=ExtResource("6_cpmdi")]
+transform = Transform3D(0.352675, 1.15065, -1.16145, -0.357993, 1.13355, 1.17897, 1.53506, 2.98023e-08, 0.541794, -128.401, 1010.22, -1266.72)
+
+[node name="AstroidRed9" parent="RedAstroids" instance=ExtResource("9_iviwh")]
+transform = Transform3D(0.813857, 1.15065, -0.85068, -0.826132, 1.13355, 0.863512, 1.12432, 2.98023e-08, 1.25027, -139.561, 1001.78, -1284.73)
+
+[node name="AstroidOrange21" parent="RedAstroids" instance=ExtResource("7_sbue0")]
+transform = Transform3D(1.64152, 1.85856, -0.874362, -1.66629, 1.83093, 0.887556, 1.15562, 5.96046e-08, 2.52177, -210.857, 932.505, -1287.66)
+
+[node name="AstroidOrange22" parent="RedAstroids" instance=ExtResource("8_q0kqp")]
+transform = Transform3D(3.14595, 3.56191, -1.67571, -3.19343, 3.50896, 1.70099, 2.21473, 2.85429e-07, 4.83295, -316.575, 1061.77, -1343.03)
+
+[node name="AstroidOrange23" parent="RedAstroids" instance=ExtResource("7_sbue0")]
+transform = Transform3D(-1.85042, -1.59583, 0.985637, 1.43075, -2.06394, -0.762091, 1.15562, -5.9433e-08, 2.52177, 242.554, 989.958, -1290.91)
+
+[node name="AstroidOrange24" parent="RedAstroids" instance=ExtResource("7_sbue0")]
+transform = Transform3D(-0.904981, -1.93619, 2.52084, 2.17255, -2.11721, -0.983609, 2.12037, 1.34294, 2.08372, 178.519, 919.28, -1374.39)
+
+[node name="AstroidOrange25" parent="RedAstroids" instance=ExtResource("7_sbue0")]
+transform = Transform3D(-0.904981, -1.93619, 2.52084, 2.17255, -2.11721, -0.983609, 2.12037, 1.34294, 2.08372, 40.731, 910.789, -1373.53)
+
+[node name="AstroidOrange26" parent="RedAstroids" instance=ExtResource("7_sbue0")]
+transform = Transform3D(-3.07546, -1.61061, -1.64107, 2.07881, -2.99885, -1.10729, -0.767808, -1.66801, 3.57535, 329.308, 984.052, -1131.53)
+
+[node name="AstroidOrange27" parent="RedAstroids" instance=ExtResource("8_q0kqp")]
+transform = Transform3D(-3.54633, -3.05839, 1.88897, 2.74199, -3.95553, -1.46054, 2.21473, 1.88347e-07, 4.83295, 349.37, 952.557, -1346.28)
+
+[node name="Astroid_Red_9" parent="RedAstroids" instance=ExtResource("6_cpmdi")]
+transform = Transform3D(-1.61776, 3.56191, -3.35704, 1.64217, 3.50896, 3.4077, 4.4369, -1.19209e-07, -2.48527, -21.6558, 703.266, -1378.12)
+
+[node name="Astroid_Red_10" parent="RedAstroids" instance=ExtResource("6_cpmdi")]
+transform = Transform3D(-1.85761, 0.0853941, 10.5932, -1.27255, 9.91332, -0.352272, -9.7432, -1.31105, -1.97366, -38.0127, 722.003, -477.381)
+
+[node name="AstroidRed10" parent="RedAstroids" instance=ExtResource("9_iviwh")]
+transform = Transform3D(-6.22026, 0.085395, 8.44117, -0.973902, 9.91332, -0.950746, -7.76917, -1.31105, -6.63911, 97.7757, 698.004, -548.185)
+
+[node name="AstroidRed11" parent="RedAstroids" instance=ExtResource("9_iviwh")]
+transform = Transform3D(4.37814, 5.9039, -7.31027, 4.5246, -7.96399, -4.32634, -7.76916, -1.31105, -6.63911, -431.825, 1000.7, -474.956)
+
+[node name="AstroidRed12" parent="RedAstroids" instance=ExtResource("9_iviwh")]
+transform = Transform3D(4.98659, 0.459939, -0.362979, -0.488806, 4.97555, -0.477184, 0.293208, 0.472531, 5.37785, -257.335, 752.388, -1281.94)
+
+[node name="AstroidRed13" parent="RedAstroids" instance=ExtResource("9_iviwh")]
+transform = Transform3D(0.0981555, -0.435066, -5.38976, -0.488805, 4.97555, -0.477183, 4.99423, 0.495527, 0.0592272, 230.632, 823.241, -1469.99)
+
+[node name="AstroidOrange28" parent="RedAstroids" instance=ExtResource("7_sbue0")]
+transform = Transform3D(-6.78193, 0.287043, -0.541274, 0.24562, 6.77918, 0.601586, 0.523567, 0.537859, -7.29353, 390.044, 666.181, -1081.09)

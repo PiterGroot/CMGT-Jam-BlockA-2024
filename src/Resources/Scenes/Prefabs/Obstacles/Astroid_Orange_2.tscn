@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://do8b172f1f2rf"]
+
+[ext_resource type="PackedScene" uid="uid://bi4lkbcqqe1hr" path="res://src/Resources/Scenes/planet.tscn" id="1_43x5w"]
+[ext_resource type="PackedScene" uid="uid://cltg36wuj8dwr" path="res://src/Resources/Models/Planets/Gas_Giant_05/Gas_Giant_05_Ring_02_Aseroid.fbx" id="2_cil4q"]
+
+[node name="AstroidOrange2" type="Node3D"]
+
+[node name="Planet" parent="." instance=ExtResource("1_43x5w")]
+transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, 0, 0, 0)
+
+[node name="Gas_Giant_05_Ring_02_Aseroid" parent="." instance=ExtResource("2_cil4q")]

@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://od4ac1nosovv"]
+[gd_scene load_steps=12 format=3 uid="uid://od4ac1nosovv"]
 
 [ext_resource type="PackedScene" uid="uid://1kyemv7gh3w0" path="res://src/Resources/Scenes/ShipController.tscn" id="1_ml1cj"]
 [ext_resource type="PackedScene" uid="uid://dxdc3k8t45jx0" path="res://src/Resources/Scenes/Prefabs/Planets/Cream_Violet_Planet.tscn" id="2_f2i7f"]
 [ext_resource type="PackedScene" uid="uid://c1wgiy8ww3gs4" path="res://src/Resources/Scenes/Prefabs/Planets/Earth1.tscn" id="2_gvwti"]
 [ext_resource type="PackedScene" uid="uid://h4oei7xa0i84" path="res://src/Resources/Scenes/Prefabs/Planets/White_Drawf.tscn" id="3_ulfg2"]
 [ext_resource type="PackedScene" uid="uid://cx3d5slbifaty" path="res://src/Resources/Scenes/Prefabs/Planets/Sand_Planet.tscn" id="3_vkh6i"]
+[ext_resource type="PackedScene" uid="uid://b5j4b2ikps0dj" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Orange_1.tscn" id="6_nhfuj"]
+[ext_resource type="PackedScene" uid="uid://do8b172f1f2rf" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Orange_2.tscn" id="7_ug2rj"]
+[ext_resource type="PackedScene" uid="uid://dru84vgmec04f" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Red_1.tscn" id="8_oxn40"]
+[ext_resource type="PackedScene" uid="uid://bge1qbb1wpe61" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Red_2.tscn" id="9_5v8l8"]
+[ext_resource type="PackedScene" uid="uid://bmnwdn05ngbeh" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Blue_1.tscn" id="10_hwxbu"]
+[ext_resource type="PackedScene" uid="uid://daislbplhb3c3" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Blue_2.tscn" id="11_hv34v"]
 
 [node name="Level1" type="Node3D"]
 
@@ -13,7 +19,7 @@
 [node name="Planets" type="Node" parent="."]
 
 [node name="Earth1" parent="Planets" instance=ExtResource("2_gvwti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5184, -319.582)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.6342, -1.5184, -319.582)
 
 [node name="WhiteDrawf" parent="Planets" instance=ExtResource("3_ulfg2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -391.819, 354.583, -1343.91)
@@ -23,3 +29,189 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -261.833, 5.08408, -1013.61)
 
 [node name="SandPlanet" parent="Planets" instance=ExtResource("3_vkh6i")]
 transform = Transform3D(0.999959, -0.00202795, -0.00882739, 0.00201927, 0.999997, -0.000991647, 0.00882938, 0.00097378, 0.999961, 73.1331, 157.383, -703.57)
+
+[node name="Obstacles" type="Node" parent="."]
+
+[node name="RedAstroids" type="Node" parent="Obstacles"]
+
+[node name="AstroidOrange1" parent="Obstacles/RedAstroids" instance=ExtResource("6_nhfuj")]
+transform = Transform3D(1.40858, 0.230712, 0, -0.203281, 1.59866, 0, 0, 0, 1.61522, -81.1711, 38.8962, -681.036)
+
+[node name="AstroidOrange2" parent="Obstacles/RedAstroids" instance=ExtResource("7_ug2rj")]
+transform = Transform3D(1.40858, 0.230712, 0, -0.203281, 1.59866, 0, 0, 0, 1.61522, -74.8787, 50.8962, -700.199)
+
+[node name="Astroid_Red_1" parent="Obstacles/RedAstroids" instance=ExtResource("8_oxn40")]
+transform = Transform3D(1.07485, 0.230712, -1.06888, -0.155118, 1.59866, 0.154256, 1.10824, 0, 1.05826, -55.0941, 49.1433, -682.118)
+
+[node name="AstroidRed2" parent="Obstacles/RedAstroids" instance=ExtResource("9_5v8l8")]
+transform = Transform3D(1.35684, 0.230712, -0.486914, -0.195814, 1.59866, 0.0702695, 0.440701, 0, 1.53035, -98.3413, 41.3742, -657.497)
+
+[node name="AstroidOrange3" parent="Obstacles/RedAstroids" instance=ExtResource("6_nhfuj")]
+transform = Transform3D(2.27516, 0.37265, 0, -0.328342, 2.58218, 0, 0, 0, 2.60893, -163.745, -12.9314, -685.629)
+
+[node name="AstroidOrange4" parent="Obstacles/RedAstroids" instance=ExtResource("7_ug2rj")]
+transform = Transform3D(2.27516, 0.37265, 0, -0.328342, 2.58218, 0, 0, 0, 2.60893, -47.9167, 96.4846, -716.247)
+
+[node name="Astroid_Red_2" parent="Obstacles/RedAstroids" instance=ExtResource("8_oxn40")]
+transform = Transform3D(-0.0523461, 0.37265, -2.27482, 0.00755438, 2.58218, 0.328293, 2.60745, 0, -0.0466195, -116.876, 10.222, -698.64)
+
+[node name="AstroidOrange5" parent="Obstacles/RedAstroids" instance=ExtResource("6_nhfuj")]
+transform = Transform3D(-0.892046, 1.24745, -0.120016, 1.21176, 0.918325, 0.16303, 0.190514, 8.09945e-09, -1.59891, -243.846, 157.155, -692.155)
+
+[node name="AstroidOrange6" parent="Obstacles/RedAstroids" instance=ExtResource("7_ug2rj")]
+transform = Transform3D(-0.892046, 1.24745, -0.120016, 1.21176, 0.918325, 0.16303, 0.190514, 8.09945e-09, -1.59891, -235.993, 167.007, -672.5)
+
+[node name="Astroid_Red_3" parent="Obstacles/RedAstroids" instance=ExtResource("8_oxn40")]
+transform = Transform3D(-0.733938, 1.21805, 0.578609, 0.996981, 0.89668, -0.785983, -0.979997, 3.21114e-08, -1.23294, -247.759, 187.185, -687.61)
+
+[node name="AstroidRed3" parent="Obstacles/RedAstroids" instance=ExtResource("9_5v8l8")]
+transform = Transform3D(-0.905373, 1.21805, 0.175564, 1.22986, 0.89668, -0.238487, -0.285939, 1.58171e-08, -1.58165, -235.388, 144.004, -717.98)
+
+[node name="AstroidOrange7" parent="Obstacles/RedAstroids" instance=ExtResource("6_nhfuj")]
+transform = Transform3D(-1.44085, 2.01491, -0.193852, 1.95726, 1.48329, 0.263329, 0.307722, 1.32798e-08, -2.58258, -246.369, 52.1354, -698.193)
+
+[node name="AstroidOrange8" parent="Obstacles/RedAstroids" instance=ExtResource("7_ug2rj")]
+transform = Transform3D(-2.76138, 3.86156, -0.371516, 3.75107, 2.84272, 0.504669, 0.589746, 3.82711e-07, -4.94949, -202.693, 161.732, -653.702)
+
+[node name="AstroidOrange9" parent="Obstacles/RedAstroids" instance=ExtResource("6_nhfuj")]
+transform = Transform3D(1.66378, -1.82021, 0.22737, -1.71827, -1.76248, -0.234818, 0.30283, -1.99889e-10, -2.58156, -102.532, 101.087, -701.447)
+
+[node name="AstroidOrange10" parent="Obstacles/RedAstroids" instance=ExtResource("6_nhfuj")]
+transform = Transform3D(1.63832, -2.11183, -1.45457, -2.49905, -1.73129, -0.220487, -0.678076, 1.27823, -2.70182, -103.748, 68.0097, -686.66)
+
+[node name="AstroidOrange11" parent="Obstacles/RedAstroids" instance=ExtResource("6_nhfuj")]
+transform = Transform3D(1.63832, -2.11183, -1.45457, -2.49905, -1.73129, -0.220487, -0.678076, 1.27823, -2.70182, -225.121, 76.9467, -685.797)
+
+[node name="AstroidOrange12" parent="Obstacles/RedAstroids" instance=ExtResource("6_nhfuj")]
+transform = Transform3D(1.33848, -1.99845, 2.67629, -2.45102, -2.70558, -0.658272, 2.40047, -1.64823, -2.16441, -128.533, 96.8856, -698.134)
+
+[node name="AstroidOrange13" parent="Obstacles/RedAstroids" instance=ExtResource("7_ug2rj")]
+transform = Transform3D(3.18861, -3.48841, 0.435753, -3.29304, -3.37779, -0.450025, 0.58037, 3.36011e-07, -4.94753, -135.398, 64.0228, -656.956)
+
+[node name="Astroid_Red_4" parent="Obstacles/RedAstroids" instance=ExtResource("8_oxn40")]
+transform = Transform3D(-0.312813, 3.77054, 2.76713, 0.424925, 2.77572, -3.75887, -4.97514, 0, -0.495028, -219.207, 115.746, -679.143)
+
+[node name="Astroid_Red_5" parent="Obstacles/RedAstroids" instance=ExtResource("8_oxn40")]
+transform = Transform3D(6.7531, 1.50069, -6.50725, -0.119511, 9.80073, 1.86082, 6.83567, -1.31122, 6.46119, -153.706, 127.215, -646.617)
+
+[node name="AstroidRed4" parent="Obstacles/RedAstroids" instance=ExtResource("9_5v8l8")]
+transform = Transform3D(8.434, 1.50029, -2.86656, -0.924144, 9.79807, 1.69344, 2.74521, -1.31086, 9.3769, -290.796, 130.453, -678.694)
+
+[node name="AstroidRed6" parent="Obstacles/RedAstroids" instance=ExtResource("9_5v8l8")]
+transform = Transform3D(-7.80875, 4.49274, 3.27171, -4.65326, -8.33052, 0.371098, 2.94115, -1.25169, 9.2735, -264.804, 41.0091, -605.465)
+
+[node name="AstroidRed5" parent="Obstacles/RedAstroids" instance=ExtResource("9_5v8l8")]
+transform = Transform3D(-3.88719, 1.1666, -2.27825, 0.710911, 4.8617, 0.953122, 2.28115, 0.472809, -4.17925, -156.358, 20.1618, -678.694)
+
+[node name="AstroidRed7" parent="Obstacles/RedAstroids" instance=ExtResource("9_5v8l8")]
+transform = Transform3D(-2.72215, 0.280252, 3.82089, 0.553803, 4.98967, 0.0410136, -4.03451, 0.495825, -2.57239, -70.3694, 79.3389, -678.537)
+
+[node name="AstroidOrange14" parent="Obstacles/RedAstroids" instance=ExtResource("6_nhfuj")]
+transform = Transform3D(4.92711, 1.25134, 3.8395, -0.614764, 6.66298, -1.1319, -3.85065, 0.5374, 5.09355, -193.876, 66.3487, -670.137)
+
+[node name="AstroidOrange15" parent="Obstacles/RedAstroids" instance=ExtResource("6_nhfuj")]
+transform = Transform3D(-0.0289195, -0.709254, -1.76418, 1.66685, 0.165223, -0.101621, 0.168445, -1.75673, 0.702704, -54.0893, 137.352, -659.765)
+
+[node name="AstroidOrange16" parent="Obstacles/RedAstroids" instance=ExtResource("7_ug2rj")]
+transform = Transform3D(-0.0289195, -0.709254, -1.76418, 1.66685, 0.165223, -0.101621, 0.168445, -1.75673, 0.702704, -38.8606, 145.151, -681.462)
+
+[node name="Astroid_Red_6" parent="Obstacles/RedAstroids" instance=ExtResource("8_oxn40")]
+transform = Transform3D(-1.23251, -0.709255, -1.13391, 1.2022, 0.165222, -1.33144, 0.610678, -1.75673, 0.332576, -59.4913, 167.353, -672.435)
+
+[node name="AstroidRed8" parent="Obstacles/RedAstroids" instance=ExtResource("9_5v8l8")]
+transform = Transform3D(-0.5092, -0.709255, -1.66148, 1.5779, 0.165223, -0.672472, 0.353985, -1.75673, 0.607552, -79.4466, 115.553, -651.577)
+
+[node name="AstroidOrange17" parent="Obstacles/RedAstroids" instance=ExtResource("6_nhfuj")]
+transform = Transform3D(-0.0467113, -1.1456, -2.84953, 2.69232, 0.26687, -0.164139, 0.272075, -2.8375, 1.13502, -19.8589, 44.1377, -601.942)
+
+[node name="AstroidOrange18" parent="Obstacles/RedAstroids" instance=ExtResource("7_ug2rj")]
+transform = Transform3D(-0.0467113, -1.1456, -2.84953, 2.69232, 0.26687, -0.164139, 0.272075, -2.8375, 1.13502, -43.2467, 174.798, -739.319)
+
+[node name="Astroid_Red_7" parent="Obstacles/RedAstroids" instance=ExtResource("8_oxn40")]
+transform = Transform3D(-1.02238, 2.87781, 0.288517, -0.22599, 0.26687, -2.68898, -2.8865, -1.0402, 0.108334, -492.769, 197.729, -556.557)
+
+[node name="AstroidOrange19" parent="Obstacles/RedAstroids" instance=ExtResource("6_nhfuj")]
+transform = Transform3D(1.23134, 1.06944, 0.806522, -1.13913, 1.40363, -0.0510512, -0.612328, -0.460655, 1.71683, -337.681, 38.5764, -610.874)
+
+[node name="AstroidOrange20" parent="Obstacles/RedAstroids" instance=ExtResource("7_ug2rj")]
+transform = Transform3D(1.23134, 1.06944, 0.806522, -1.13913, 1.40363, -0.0510512, -0.612328, -0.460655, 1.71683, -334.191, 45.9068, -637.134)
+
+[node name="Astroid_Red_8" parent="Obstacles/RedAstroids" instance=ExtResource("8_oxn40")]
+transform = Transform3D(1.46152, 1.04423, -0.361057, -0.865707, 1.37054, 0.808668, 0.755169, -0.449798, 1.62582, -306.347, 31.7134, -627.334)
+
+[node name="AstroidRed9" parent="Obstacles/RedAstroids" instance=ExtResource("9_5v8l8")]
+transform = Transform3D(1.43881, 1.04423, 0.366803, -1.12599, 1.37054, 0.321342, -0.0906412, -0.449798, 1.83069, -341.725, 50.998, -577.816)
+
+[node name="AstroidOrange21" parent="Obstacles/RedAstroids" instance=ExtResource("6_nhfuj")]
+transform = Transform3D(1.98889, 1.72737, 1.30271, -1.83994, 2.26717, -0.0824593, -0.989045, -0.744058, 2.77304, -451.822, 42.9305, -562.908)
+
+[node name="AstroidOrange22" parent="Obstacles/RedAstroids" instance=ExtResource("7_ug2rj")]
+transform = Transform3D(3.81169, 3.31049, 2.49663, -3.52623, 4.34502, -0.158033, -1.89549, -1.42598, 5.31451, -346.08, 84.1606, -658.6)
+
+[node name="AstroidOrange23" parent="Obstacles/RedAstroids" instance=ExtResource("6_nhfuj")]
+transform = Transform3D(-1.95562, -2.02884, 0.767456, 2.04742, -2.02018, 0.444819, 0.201238, 0.837406, 2.93246, -390.343, 208.742, -590.153)
+
+[node name="AstroidOrange24" parent="Obstacles/RedAstroids" instance=ExtResource("6_nhfuj")]
+transform = Transform3D(-2.43525, -2.51052, 0.761432, 2.13081, -2.44498, -1.52285, 1.59505, -0.566725, 3.1969, -432.894, 208.568, -593.494)
+
+[node name="AstroidOrange25" parent="Obstacles/RedAstroids" instance=ExtResource("6_nhfuj")]
+transform = Transform3D(-2.43525, -2.51052, 0.761432, 2.13081, -2.44498, -1.52285, 1.59505, -0.566725, 3.1969, -428.332, 65.4534, -588.07)
+
+[node name="AstroidOrange26" parent="Obstacles/RedAstroids" instance=ExtResource("6_nhfuj")]
+transform = Transform3D(-3.60881, -2.43144, 0.234462, 1.582, -2.06343, 3.32114, -1.80889, 3.04619, 2.43681, -397.38, 178.29, -590.064)
+
+[node name="AstroidOrange27" parent="Obstacles/RedAstroids" instance=ExtResource("7_ug2rj")]
+transform = Transform3D(-3.74793, -3.88825, 1.47083, 3.92386, -3.87166, 0.852492, 0.385673, 1.60488, 5.62004, -450.336, 169.812, -622.258)
+
+[node name="Astroid_Red_9" parent="Obstacles/RedAstroids" instance=ExtResource("8_oxn40")]
+transform = Transform3D(2.42077, 3.23246, -3.85747, -0.0822454, 4.2426, 3.52753, 5.36933, -1.39237, 1.79318, -387.703, 69.4146, -611.094)
+
+[node name="Astroid_Red_10" parent="Obstacles/RedAstroids" instance=ExtResource("8_oxn40")]
+transform = Transform3D(-2.5506, 11.4436, -0.754368, 7.50477, 1.1967, -8.16776, -8.07338, -2.50293, -7.35417, -385.119, 143.497, -656.933)
+
+[node name="AstroidRed10" parent="Obstacles/RedAstroids" instance=ExtResource("9_5v8l8")]
+transform = Transform3D(-1.75963, 11.4405, -1.94, 9.78833, 1.19637, -4.06662, -3.3652, -2.50225, -10.8142, -374.528, -15.6182, -611.518)
+
+[node name="AstroidRed11" parent="Obstacles/RedAstroids" instance=ExtResource("9_5v8l8")]
+transform = Transform3D(-6.64054, -8.55568, -3.11198, -9.04376, 5.90266, 3.23245, -0.802137, 4.27874, -10.6819, -501.497, 16.1921, -659.755)
+
+[node name="AstroidRed12" parent="Obstacles/RedAstroids" instance=ExtResource("9_5v8l8")]
+transform = Transform3D(-0.27209, 5.25096, 2.61129, -4.75334, 1.01851, -2.47427, -2.48816, -2.51996, 4.44122, -491.247, 149.473, -579.323)
+
+[node name="AstroidRed13" parent="Obstacles/RedAstroids" instance=ExtResource("9_5v8l8")]
+transform = Transform3D(2.09322, 5.3472, 1.21778, -2.97807, -0.0317982, 4.64417, 4.4732, -2.52338, 2.52204, -422.163, 246.49, -609.638)
+
+[node name="AstroidOrange28" parent="Obstacles/RedAstroids" instance=ExtResource("6_nhfuj")]
+transform = Transform3D(1.0407, 7.22578, -3.10576, 6.06641, 0.994952, 4.26119, 4.1042, -3.30287, -5.51094, -444.97, 101.844, -603.811)
+
+[node name="BlueAstroids" type="Node" parent="Obstacles"]
+
+[node name="AstroidBlue1" parent="Obstacles/BlueAstroids" instance=ExtResource("10_hwxbu")]
+transform = Transform3D(3.60566, -1.69957, -0.0820493, 1.4147, 3.10115, -2.06822, 0.945459, 1.8413, 3.4076, -140.749, 42.9561, -1064.45)
+
+[node name="AstroidBlue4" parent="Obstacles/BlueAstroids" instance=ExtResource("10_hwxbu")]
+transform = Transform3D(2.67416, -1.50473, -0.0543032, 1.04922, 2.74563, -1.36882, 0.701206, 1.63021, 2.25527, -54.7452, -1.22508, -1097.69)
+
+[node name="AstroidBlue2" parent="Obstacles/BlueAstroids" instance=ExtResource("11_hv34v")]
+transform = Transform3D(3.94803, 0, 0, 0, 3.94803, 0, 0, 0, 3.94803, -125.664, 93.832, -1044.87)
+
+[node name="AstroidBlue3" parent="Obstacles/BlueAstroids" instance=ExtResource("11_hv34v")]
+transform = Transform3D(-1.91731, 2.705, 0, -2.30736, -2.24773, 0, 0, 0, 3.517, -116.735, -13.0974, -1082.31)
+
+[node name="AstroidBlue5" parent="Obstacles/BlueAstroids" instance=ExtResource("11_hv34v")]
+transform = Transform3D(-4.26036, 6.01065, 0, -2.27992, -2.221, -6.99977, -4.59226, -4.47358, 3.47517, -80.1948, 51.6099, -1082.31)
+
+[node name="AstroidBlue6" parent="Obstacles/BlueAstroids" instance=ExtResource("10_hwxbu")]
+transform = Transform3D(-0.805194, 3.78917, -0.943342, 3.34748, 0.173899, -2.15874, -2.01049, -1.22801, -3.21651, 44.2342, -0.0728817, -1138.69)
+
+[node name="AstroidBlue7" parent="Obstacles/BlueAstroids" instance=ExtResource("10_hwxbu")]
+transform = Transform3D(-0.597178, 3.35478, -0.624339, 2.48268, 0.153963, -1.42873, -1.4911, -1.08723, -2.1288, -47.0905, 45.6144, -1133.56)
+
+[node name="AstroidBlue8" parent="Obstacles/BlueAstroids" instance=ExtResource("11_hv34v")]
+transform = Transform3D(-2.30131, 3.12015, 0.745388, 2.96833, 2.41901, -0.961433, -1.21653, 0, -3.75593, 79.3453, 37.673, -1161.96)
+
+[node name="AstroidBlue9" parent="Obstacles/BlueAstroids" instance=ExtResource("11_hv34v")]
+transform = Transform3D(-0.705917, -3.35314, 0.664009, -2.85528, 0.656538, -0.856468, 0.590795, -0.833511, -3.34587, -17.4349, -12.0134, -1129.1)
+
+[node name="AstroidBlue10" parent="Obstacles/BlueAstroids" instance=ExtResource("11_hv34v")]
+transform = Transform3D(-0.185481, -6.10349, -4.87584, -3.48177, 4.24769, -5.13514, 5.68158, 2.4038, -3.30608, 12.4043, 55.1065, -1140.36)
