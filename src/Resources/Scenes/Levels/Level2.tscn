@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cge0cpytyiyuo"]
+[gd_scene load_steps=11 format=3 uid="uid://cge0cpytyiyuo"]
 
 [ext_resource type="PackedScene" uid="uid://1kyemv7gh3w0" path="res://src/Resources/Scenes/ShipController.tscn" id="1_0a4ub"]
 [ext_resource type="PackedScene" uid="uid://dyqps5ekgrm7s" path="res://src/Resources/Scenes/Prefabs/Planets/Lava_Planet_1.tscn" id="2_hjlh6"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b5j4b2ikps0dj" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Orange_1.tscn" id="7_sbue0"]
 [ext_resource type="PackedScene" uid="uid://do8b172f1f2rf" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Orange_2.tscn" id="8_q0kqp"]
 [ext_resource type="PackedScene" uid="uid://bge1qbb1wpe61" path="res://src/Resources/Scenes/Prefabs/Obstacles/Astroid_Red_2.tscn" id="9_iviwh"]
+[ext_resource type="PackedScene" uid="uid://51pujn1bi7i7" path="res://src/Resources/Scenes/Prefabs/music.tscn" id="10_es5dw"]
 
 [node name="Level2" type="Node3D"]
 
@@ -184,3 +185,5 @@ transform = Transform3D(0.0981555, -0.435066, -5.38976, -0.488805, 4.97555, -0.4
 
 [node name="AstroidOrange28" parent="RedAstroids" instance=ExtResource("7_sbue0")]
 transform = Transform3D(-6.78193, 0.287043, -0.541274, 0.24562, 6.77918, 0.601586, 0.523567, 0.537859, -7.29353, 390.044, 666.181, -1081.09)
+
+[node name="Music" parent="." instance=ExtResource("10_es5dw")]
