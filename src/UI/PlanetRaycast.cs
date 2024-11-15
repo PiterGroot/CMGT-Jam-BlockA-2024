@@ -13,8 +13,6 @@ public partial class PlanetRaycast : Camera3D
 	{
 		if (CheckIfMouseHoveringPlanet() && Input.IsMouseButtonPressed(MouseButton.Left)) 
 		{
-			GD.Print("PLAY SOUND EFFECT HERE");
-
 			SoundManager.Instance.player.Stream = SoundManager.Instance.button;
 			SoundManager.Instance.player.Play();
 
