@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bl32hjkgug2t6"]
+[gd_scene load_steps=14 format=3 uid="uid://bl32hjkgug2t6"]
 
 [ext_resource type="PackedScene" uid="uid://bmi0mx2hug6os" path="res://src/Resources/Scenes/Prefabs/Planets/Broken_Planet.tscn" id="1_kaps5"]
 [ext_resource type="Sky" uid="uid://boddwq0d0bk4f" path="res://src/Resources/Textures/skybox/Skybox.tres" id="1_vew04"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://h4oei7xa0i84" path="res://src/Resources/Scenes/Prefabs/Planets/White_Drawf.tscn" id="5_ck62y"]
 [ext_resource type="Script" path="res://src/UI/SceneSwitcherButton.cs" id="6_82v8k"]
 [ext_resource type="Script" path="res://src/UI/QuitButton.cs" id="7_vjupa"]
+[ext_resource type="PackedScene" uid="uid://51pujn1bi7i7" path="res://src/Resources/Scenes/Prefabs/music.tscn" id="9_btlna"]
 
 [sub_resource type="Environment" id="Environment_5ged7"]
 background_mode = 2
@@ -115,3 +116,5 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_p6ycu")
 text = "Quit"
 flat = true
 script = ExtResource("7_vjupa")
+
+[node name="Music" parent="." instance=ExtResource("9_btlna")]

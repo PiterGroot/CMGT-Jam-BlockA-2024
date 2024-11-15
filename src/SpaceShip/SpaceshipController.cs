@@ -37,11 +37,23 @@ public partial class SpaceshipController : CharacterBody3D
 	{
 		if (Input.IsActionPressed("move_forward") && SpaceShipFuel.CurrentFuel > 0)
 		{
+			if (Engine.GetFramesDrawn() % 5 == 0)
+			{
+				SoundManager.Instance.player.Stream = SoundManager.Instance.thruster;
+				SoundManager.Instance.player.Play();
+			}
+
 			_currentSpeed = Mathf.Min(_currentSpeed + (float)(Acceleration * delta), MaxSpeed);
 			EventBus.Publish("move_forward");
 		}
 		else if (Input.IsActionPressed("move_backward") && SpaceShipFuel.CurrentFuel > 0)
 		{
+			if (Engine.GetFramesDrawn() % 5 == 0)
+			{
+				SoundManager.Instance.player.Stream = SoundManager.Instance.back;
+				SoundManager.Instance.player.Play();
+			}
+			
 			_currentSpeed = Mathf.Max(_currentSpeed - (float)(Acceleration * delta), -MaxSpeed);
 			EventBus.Publish("move_backward");
 		}
