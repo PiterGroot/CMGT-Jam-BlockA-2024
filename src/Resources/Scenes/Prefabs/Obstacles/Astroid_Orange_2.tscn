@@ -1,11 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://do8b172f1f2rf"]
+[gd_scene load_steps=4 format=3 uid="uid://do8b172f1f2rf"]
 
-[ext_resource type="PackedScene" uid="uid://bi4lkbcqqe1hr" path="res://src/Resources/Scenes/planet.tscn" id="1_43x5w"]
+[ext_resource type="Script" path="res://src/Resources/Scenes/PlanetData.cs" id="2_bwm6p"]
 [ext_resource type="PackedScene" uid="uid://cltg36wuj8dwr" path="res://src/Resources/Models/Planets/Gas_Giant_05/Gas_Giant_05_Ring_02_Aseroid.fbx" id="2_cil4q"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qw8nj"]
 
 [node name="AstroidOrange2" type="Node3D"]
 
-[node name="Planet" parent="." instance=ExtResource("1_43x5w")]
-transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, 0, 0, 0)
-
 [node name="Gas_Giant_05_Ring_02_Aseroid" parent="." instance=ExtResource("2_cil4q")]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Gas_Giant_05_Ring_02_Aseroid" groups=["planets"]]
+visible = false
+use_collision = true
+radius = 5.0
+radial_segments = 10
+rings = 10
+script = ExtResource("2_bwm6p")
+GravityStrength = 500.0
+GravityRadius = 500.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gas_Giant_05_Ring_02_Aseroid/CSGSphere3D" groups=["planets"]]
+shape = SubResource("SphereShape3D_qw8nj")
