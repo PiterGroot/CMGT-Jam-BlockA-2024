@@ -89,6 +89,7 @@ public partial class SpaceshipController : CharacterBody3D
 			{
 				float distance = GlobalTransform.Origin.DistanceTo(planet.GlobalTransform.Origin);
 
+				// Check if within the planet's gravitational radius and if it's the closest one
 				if (distance < planet.GravityRadius && distance < closestDistance)
 				{
 					closestDistance = distance;
@@ -99,7 +100,7 @@ public partial class SpaceshipController : CharacterBody3D
 	}
 	
 	private void CheckTrophyCollision()
-	{
+{
 	foreach (Node node in GetTree().GetNodesInGroup("WinCondition"))
 	{
 		if (node is Node3D trophy)
@@ -108,34 +109,26 @@ public partial class SpaceshipController : CharacterBody3D
 
 			if (distance <= 20.0f)
 			{
-				GD.Print($"rettrefdsgkhjfdsjhkgfdhjgkfdgjhjdhgf");
-				OnCollisionWithTrophy(trophy);
-			}
+				var newScene = (PackedScene)GD.Load("res://src/Resources/Scenes/LevelSelectMenu.tscn");
+				if (newScene != null)
+				{
+					GetTree().ChangeSceneToPacked(newScene);
+				}
 			}
 		}
 	}
+}
 
-	private void OnCollisionWithTrophy(Node trophy)
-	{
-		if (trophy.HasMethod("LoadNextScene"))
-		{
-			trophy.Call("LoadNextScene");
-		}
-		else
-		{
-			GD.PrintErr($"Trophy node {trophy.Name} does not have a LoadNextScene method!");
-		}
-	}
-	
 	private void ApplyGravity(double delta)
 	{
-		UpdateNearestPlanet(); 
+		UpdateNearestPlanet();  // Find the nearest planet within range
 		
 		if (_nearestPlanet != null)
 		{
 			Vector3 directionToPlanet = (_nearestPlanet.GlobalTransform.Origin - GlobalTransform.Origin).Normalized();
 			Vector3 gravitationalPull = directionToPlanet * _nearestPlanet.GravityStrength * (float)delta;
 
+			// Apply gravitational pull to the spaceship's velocity
 			_velocity += gravitationalPull;
 		}
 	}

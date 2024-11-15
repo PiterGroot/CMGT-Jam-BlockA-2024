@@ -15,10 +15,6 @@
 
 [node name="Level1" type="Node3D"]
 
-[node name="WinCondition2" parent="." instance=ExtResource("1_m7ijh")]
-transform = Transform3D(30.587, 0, 0, 0, 30.587, 0, 0, 0, 30.587, 0, 0, -114.112)
-NextScenePath = "res://src/Resources/Scenes/Levels/Level2.tscn"
-
 [node name="WinCondition" parent="." instance=ExtResource("1_m7ijh")]
 transform = Transform3D(5.53055, 0, 0, 0, 5.53055, 0, 0, 0, 5.53055, -391.645, 558.125, -1694.65)
 NextScenePath = "res://src/Resources/Scenes/Levels/Level2.tscn"

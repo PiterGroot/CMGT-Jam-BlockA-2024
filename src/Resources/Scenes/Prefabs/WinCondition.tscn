@@ -9,13 +9,14 @@
 physics_interpolation_mode = 2
 script = ExtResource("1_1dtax")
 
-[node name="WinnerCup" parent="." instance=ExtResource("1_i65xa")]
+[node name="WinnerCup" parent="." groups=["WinCondition"] instance=ExtResource("1_i65xa")]
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." groups=["WinCondition"]]
 visible = false
+use_collision = true
 collision_layer = 0
 collision_mask = 0
 radius = 2.77196
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGSphere3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGSphere3D" groups=["WinCondition"]]
 shape = SubResource("SphereShape3D_ljtah")
