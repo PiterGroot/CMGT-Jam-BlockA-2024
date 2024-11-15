@@ -21,7 +21,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -305.378, -334.919, -1380.32)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -229.335, -129.478, -926.786)
 
 [node name="WhiteDrawf" parent="Planets" instance=ExtResource("5_87yvd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -396.954, 342.884, -1550.82)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -396.954, 236.352, -1550.82)
 
 [node name="InfectedPlanet" parent="Planets" instance=ExtResource("5_k550c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.20599, -48.7149, -471.382)
@@ -74,7 +74,7 @@ transform = Transform3D(-0.608762, -2.62909, -2.93485, -3.93189, 0.212098, 0.625
 transform = Transform3D(-0.451493, -2.32769, -1.94239, -2.91611, 0.187783, 0.414026, -0.19015, 2.64706, -1.73741, -46.071, 144.374, -1404.49)
 
 [node name="AstroidBlue18" parent="Blue_Astroids" instance=ExtResource("7_t7647")]
-transform = Transform3D(-1.83452, -3.48135, -11.9037, -10.775, -5.51131, 3.2724, -6.14147, 10.7093, -2.18555, -284.81, -128.684, -1289.12)
+transform = Transform3D(-1.83452, -3.48135, -11.9037, -10.775, -5.51131, 3.2724, -6.14147, 10.7093, -2.18555, -280.75, -128.684, -1288.49)
 
 [node name="AstroidBlue19" parent="Blue_Astroids" instance=ExtResource("7_t7647")]
 transform = Transform3D(0.28055, 3.22039, 1.37485, -2.36536, -0.603659, 2.07736, 1.82383, -1.27827, 2.48267, -105.311, -57.6629, -934.069)
